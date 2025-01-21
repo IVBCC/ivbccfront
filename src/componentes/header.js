@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header">
       <div className="logo">
-        <img src="https://www.cruzadacristiana.org/wp-content/uploads/2024/03/Logo-Cruzada-Cristiana-Negro-1.png" alt="Iglesia Cruzada Cristiana" />
+        <img 
+          src="https://www.cruzadacristiana.org/wp-content/uploads/2024/03/Logo-Cruzada-Cristiana-Negro-1.png" 
+          alt="Iglesia Cruzada Cristiana" 
+        />
       </div>
-      <nav className="navbar">
+      <button className="menu-toggle" onClick={toggleMenu}>
+        ☰
+      </button>
+      <nav className={`navbar ${isMenuOpen ? 'navbar-open' : ''}`}>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Nosotros</a></li>

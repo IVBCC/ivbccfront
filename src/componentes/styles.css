@@ -25,22 +25,32 @@ p {
   margin: 0;
 }
 
+/* Estilos generales del header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 30px;
+  padding: 10px 20px;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
-  position: sticky; /* Hace que el menú "pegue" a la parte superior */
-  top: 0; /* Se queda en la parte superior de la ventana */
-  z-index: 100; /* Asegura que quede encima de otros elementos */
-  background-color: #fff; /* Color de fondo (puedes cambiarlo según el diseño) */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mayor visibilidad */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-  height: 70px;
+  height: 50px;
+}
+
+/* Estilos para el botón del menú hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
 }
 
 .navbar ul {
@@ -59,6 +69,39 @@ p {
 
 .navbar a:hover {
   color: #d18239;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Muestra el botón hamburguesa */
+  }
+
+  .navbar {
+    display: none; /* Esconde el menú por defecto */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .navbar-open {
+    display: flex; /* Muestra el menú al abrirlo */
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 18px; /* Ajusta el tamaño de letra */
+  }
 }
 
 .hero-section {
