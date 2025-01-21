@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px; /* Cambia el tamaño de fuente aquí (por defecto era 16px) */
+  line-height: 1.6; /* Ajusta la altura de línea para mantener buena legibilidad */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Color del texto */
+  background-color: #f9f9f9; /* Color de fondo general */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Texto en negrita */
+  margin: 0;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Texto normal */
+  line-height: 1.6;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  position: sticky; /* Hace que el menú "pegue" a la parte superior */
+  top: 0; /* Se queda en la parte superior de la ventana */
+  z-index: 100; /* Asegura que quede encima de otros elementos */
+  background-color: #fff; /* Color de fondo (puedes cambiarlo según el diseño) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mayor visibilidad */
+}
+
+.logo img {
+  height: 70px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #d18239;
+}
+
+.hero-section {
+  height: 45vh; /* Mantén la altura del componente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9; /* Color de fondo opcional */
+  color: #080707;
+  padding: 20px; /* Espaciado interno */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.hero-logo {
+  margin-top: 20px; /* Espacio entre el texto y el logo */
+  width: 150px; /* Tamaño del logo */
+  height: auto; /* Mantener proporción */
+  display: block; /* Centrar el logo */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Estilo para el contenedor de la flecha */
+.arrow-container {
+  margin-top: 20px; /* Espaciado entre el texto y la flecha */
+  display: flex;
+  justify-content: center;
+}
+
+/* Flecha animada */
+.arrow-down {
+  width: 20px;
+  height: 20px;
+  border-left: 3px solid #080707;
+  border-bottom: 3px solid #080707;
+  transform: rotate(-45deg);
+  animation: arrow-bounce 1.5s infinite;
+}
+
+/* Animación para la flecha */
+@keyframes arrow-bounce {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.section-content {
+  flex: 1;
+}
+
+.section-image {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* Estilo general del footer */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 50px 20px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Contenedor principal */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Columnas del footer */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+}
+.footer-contact-item {
+  display: flex; /* Coloca el ícono y el texto en una fila */
+  align-items: center; /* Centra verticalmente el contenido */
+  margin-bottom: 10px; /* Espaciado entre los elementos */
+}
+
+.contact-icon {
+  width: 20px; /* Ajusta el tamaño del ícono */
+  height: 20px; /* Mantén proporciones cuadradas */
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+.footer-contact-item p {
+  margin: 0; /* Elimina el margen predeterminado de los párrafos */
+  font-size: 14px; /* Ajusta el tamaño del texto */
+}
+
+/* Redes sociales */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+.footer-socials {
+  display: flex;
+  justify-content: center; /* Centra los íconos horizontalmente */
+  gap: 15px; /* Espaciado entre los íconos */
+  margin-top: 10px; /* Espaciado superior */
+}
+
+.social-icon {
+  width: 30px; /* Ajusta el tamaño de los íconos */
+  height: 30px; /* Mantiene proporción */
+  transition: transform 0.3s ease; /* Animación en hover */
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Agranda ligeramente el ícono al pasar el mouse */
+}
+
+.footer-socials a {
+  text-decoration: none; /* Elimina subrayado de los enlaces */
+}
+
+/* Aviso de derechos reservados */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.events-section {
+  padding: 40px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.event-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px; /* Ancho fijo */
+  text-align: left;
+}
+
+.event-item:hover {
+  transform: scale(1.05); /* Aumenta el tamaño ligeramente */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más marcada al hacer hover */
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.event-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.event-item p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.events-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.events-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.announcements-section {
+  position: relative;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.carousel-image {
+  width: 100%; /* Asegura que la imagen ocupe el ancho completo */
+  height: 100vh; /* Ajusta la altura al contenedor */
+  object-fit: fill; /* Mantiene la proporción de las imágenes */
+  border-radius: 20px; /* Bordes redondeados opcionales */
+}
+
+.slick-prev,
+.slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 10px; /* Ajusta la posición de la flecha izquierda */
+}
+
+.slick-next {
+  right: 10px; /* Ajusta la posición de la flecha derecha */
+}
+
+.slick-prev::before,
+.slick-next::before {
+  display: block; /* Asegura que el área de la flecha siga visible */
+}
+
+.slick-dots li button:before {
+  color: #ca5a5a; /* Cambia el color de los puntos de navegación */
+}
+
+.news-section {
+  padding: 40px 20px; /* Espaciado interno */
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-bottom: 50px;
+}
+
+.news-section h3 {
+  font-size: 18px; /* Título más pequeño */
+  margin-bottom: 10px;
+}
+
+.news-section h2 {
+  font-size: 22px; /* Subtítulo más pequeño */
+  margin-bottom: 20px;
+}
+
+.news-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas */
+  gap: 20px; /* Espaciado entre las tarjetas */
+}
+
+.news-card {
+  background-color: #fff; /* Fondo blanco para las tarjetas */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow: hidden; /* Oculta contenido desbordado */
+  width: 280px; /* Ancho fijo más pequeño */
+  height: 420px; /* Altura fija */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-card img {
+  width: 100%;
+  height: 250px; /* Altura específica para imágenes */
+  object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}
+
+.news-card h4 {
+  font-size: 16px; /* Título más pequeño */
+  margin: 10px;
+}
+
+.news-card p {
+  font-size: 14px; /* Texto más pequeño */
+  margin: 0 10px 10px;
+}
+
+.news-card a {
+  display: block;
+  text-decoration: none;
+  color: #007bff; /* Azul para enlaces */
+  font-size: 14px;
+  margin: 10px;
+  text-align: right; /* Alinea el enlace a la derecha */
+}
+
+.news-card a:hover {
+  text-decoration: underline;
+}
+
+.partners-section {
+  background-color: #168ccc; /* Azul suave y cremoso */
+  padding: 10px 0; /* Espaciado superior e inferior */
+  text-align: center;
+}
+
+.partners-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los logos */
+  align-items: center; /* Asegura alineación vertical */
+  gap: 20px; /* Espaciado entre los logos */
+  flex-wrap: wrap; /* Permite que los logos se ajusten en múltiples líneas si es necesario */
+}
+
+.partner-logo {
+  max-width: 100px; /* Controla el ancho máximo de los logos */
+  height: auto; /* Mantiene la proporción de las imágenes */
+  filter: brightness(0) invert(1); /* Hace los logos blancos si son oscuros */
+  transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+.partner-logo:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.contact-logo {
+  text-align: left; /* Centra el logo en la columna */
+  margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.contact-logo img {
+  width: 90px; /* Ajusta el tamaño del logo */
+  height: auto; /* Mantiene la proporción del logo */
+  display: block; /* Asegura que no tenga margen o desplazamiento adicional */
+}
