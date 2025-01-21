@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 
-const Header = () => {
+const Header = ({onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,15 +21,15 @@ const Header = () => {
       </button>
       <nav className={`navbar ${isMenuOpen ? 'navbar-open' : ''}`}>
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#formacion">Formación</a></li>
-          <li><a href="#iglesias">Iglesias</a></li>
-          <li><a href="#noticias">Noticias</a></li>
-          <li><a href="#eventos">Próximos Eventos</a></li>
-          <li><a href="#publicaciones">Publicaciones</a></li>
-          <li><a href="#descargas">Descargas</a></li>
-          <li><a href="#contacto">Contáctanos</a></li>
+          <li><button onClick={()=>onNavigate('inicio')}>Inicio</button></li>
+          <li><button onClick={()=>onNavigate('nosotros')}>Nosotros</button></li>
+          <li><button onClick={()=>onNavigate('formacion')}>Formación</button></li>
+          <li><button onClick={()=>onNavigate('iglesias')}>Iglesias</button></li>
+          <li><button onClick={()=>onNavigate('noticias')}>Noticias</button></li>
+          <li><button onClick={()=>onNavigate('eventos')}>Eventos</button></li>
+          <li><button onClick={()=>onNavigate('publicaciones')}>Publicaciones</button></li>
+          <li><button onClick={()=>onNavigate('descargas')}>Descargas</button></li>
+          <li><button onClick={()=>onNavigate('contacto')}>Contáctanos</button></li>
         </ul>
       </nav>
     </header>

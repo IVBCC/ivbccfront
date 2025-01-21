@@ -61,14 +61,25 @@ p {
   padding: 0;
 }
 
+.navbar button {
+  background: none;
+  border: none;
+  color: #141414;
+  font-weight: bolder;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
 .navbar a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
 }
 
-.navbar a:hover {
-  color: #d18239;
+.navbar button:hover {
+  color: #d18239; /* Color naranja en hover */
 }
 
 /* Estilos para pantallas pequeñas */
@@ -511,4 +522,117 @@ p {
   width: 90px; /* Ajusta el tamaño del logo */
   height: auto; /* Mantiene la proporción del logo */
   display: block; /* Asegura que no tenga margen o desplazamiento adicional */
+}
+/* ======= SECCIÓN NOSOTROS ======= */
+.about-us-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Título de la sección */
+.about-us-header {
+  text-align: center;
+  background-color: #d18239;
+  color: #fff;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+}
+
+.about-us-header h1 {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+/* Contenido principal */
+.about-us-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.about-us-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-us-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-us-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-us-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-us-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover; /* Ajuste para evitar deformaciones */
+}
+
+/* Valores y misión */
+.about-us-values {
+  text-align: center;
+}
+
+.about-us-values h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.value-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.value-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.value-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* ======= ESTILOS RESPONSIVOS ======= */
+@media (max-width: 768px) {
+  .about-us-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-us-image {
+    margin-top: 20px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
 }
