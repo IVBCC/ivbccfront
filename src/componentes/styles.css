@@ -523,116 +523,116 @@ p {
   height: auto; /* Mantiene la proporción del logo */
   display: block; /* Asegura que no tenga margen o desplazamiento adicional */
 }
-/* ======= SECCIÓN NOSOTROS ======= */
-.about-us-section {
-  padding: 80px 20px;
+/* Sección Nosotros */
+.aboutus-section {
+  padding: 50px 20px;
   background-color: #f9f9f9;
 }
 
-/* Título de la sección */
-.about-us-header {
-  text-align: center;
-  background-color: #d18239;
-  color: #fff;
-  padding: 40px 20px;
-  margin-bottom: 40px;
-}
-
-.about-us-header h1 {
-  font-size: 2.8rem;
-  margin: 0;
-}
-
-/* Contenido principal */
-.about-us-content {
+/* Contenedor principal */
+.aboutus-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 60px;
-}
-
-.about-us-text {
-  flex: 1;
-  max-width: 600px;
-}
-
-.about-us-text h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-}
-
-.about-us-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.about-us-image {
-  flex: 1;
-  max-width: 500px;
-}
-
-.about-us-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover; /* Ajuste para evitar deformaciones */
-}
-
-/* Valores y misión */
-.about-us-values {
-  text-align: center;
-}
-
-.about-us-values h2 {
-  font-size: 2.4rem;
-  margin-bottom: 40px;
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-.value-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.aboutus-text {
+  flex: 1 1 40%;
+  text-align: left;
 }
 
-.value-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.aboutus-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #050505;
 }
 
-.value-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.value-item p {
+.aboutus-text p {
   font-size: 1rem;
-  color: #666;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #555;
 }
 
-/* ======= ESTILOS RESPONSIVOS ======= */
+.aboutus-image {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutus-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Misión, Visión y Lo que hacemos */
+.mission-vision-container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mission, .vision, .what-we-do {
+  flex: 1 1 30%;
+  text-align: center;
+  padding: 20px;
+}
+
+.mission h2, .vision h2, .what-we-do h2 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.mission p, .vision p, .what-we-do p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
-  .about-us-content {
-    flex-direction: column;
-    text-align: center;
+  .aboutus-text, .aboutus-image {
+    flex: 1 1 100%;
   }
 
-  .about-us-image {
-    margin-top: 20px;
+  .aboutus-text h1 {
+    font-size: 2rem;
   }
 
-  .values-grid {
-    grid-template-columns: 1fr;
+  .aboutus-text p {
+    font-size: 0.9rem;
+  }
+
+  .mission, .vision, .what-we-do {
+    flex: 1 1 100%;
+  }
+
+  .mission-vision-container {
+    padding: 20px 10px;
   }
 }
+
+/* Animación de difuminado */
+.fade-in-trigger {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
