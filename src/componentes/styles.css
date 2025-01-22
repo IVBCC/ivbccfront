@@ -571,68 +571,147 @@ p {
 }
 
 /* Misión, Visión y Lo que hacemos */
-.mission-vision-container {
-  margin-top: 50px;
+.mission-vision-section {
+  padding: 40px 20px;
+  background-color: #f7f7f7;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  background-color: #ffffff;
-  padding: 30px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Espaciado uniforme entre secciones */
 }
 
-.mission, .vision, .what-we-do {
-  flex: 1 1 30%;
+.mission-vision-section .section {
   text-align: center;
-  padding: 20px;
+  max-width: 800px;
+  width: 100%;
 }
 
-.mission h2, .vision h2, .what-we-do h2 {
-  font-size: 1.5rem;
-  color: #000000;
-  margin-bottom: 15px;
+/* Títulos */
+.mission-vision-section .section-title {
+  font-size: 2rem; /* Título más grande por defecto */
+  color: #444;
+  margin-bottom: 20px; /* Separación entre título y texto */
+  font-weight: bold;
+  text-align: center;
 }
 
-.mission p, .vision p, .what-we-do p {
-  font-size: 1rem;
+/* Textos */
+.mission-vision-section p {
+  font-size: 1.1rem;
+  color: #666;
   line-height: 1.6;
-  color: #555;
+  text-align: justify;
+  margin: 0 auto;
 }
 
-/* Media query para pantallas pequeñas */
+/* Responsividad */
 @media (max-width: 768px) {
-  .aboutus-text, .aboutus-image {
-    flex: 1 1 100%;
+  .mission-vision-section .section-title {
+    font-size: 1.8rem; /* Reducir tamaño del título */
+    margin-bottom: 15px;
   }
 
-  .aboutus-text h1 {
-    font-size: 2rem;
-  }
-
-  .aboutus-text p {
-    font-size: 0.9rem;
-  }
-
-  .mission, .vision, .what-we-do {
-    flex: 1 1 100%;
-  }
-
-  .mission-vision-container {
-    padding: 20px 10px;
+  .mission-vision-section p {
+    font-size: 1rem; /* Reducir tamaño del texto */
+    line-height: 1.5;
   }
 }
 
-/* Animación de difuminado */
-.fade-in-trigger {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+@media (max-width: 480px) {
+  .mission-vision-section .section-title {
+    font-size: 1.6rem; /* Reducir tamaño del título para pantallas más pequeñas */
+    margin-bottom: 10px;
+  }
+
+  .mission-vision-section p {
+    font-size: 0.95rem; /* Reducir texto aún más */
+  }
 }
 
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
+/* Sección de Biografías */
+.biographies-section {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
+.biography {
+  display: flex;
+  flex-direction: row; /* Imagen y texto lado a lado por defecto */
+  align-items: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.biography img {
+  max-width: 300px;
+  width: 100%; /* Hacer que la imagen ocupe todo el ancho de su contenedor */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bio-text {
+  flex: 1; /* El texto ocupa el espacio restante */
+}
+
+.bio-text h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bio-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  /* Para pantallas medianas y pequeñas, las biografías deben tener la imagen arriba y el texto debajo */
+  .biography {
+    flex-direction: column; /* Cambiar a columna: imagen arriba, texto abajo */
+    text-align: center; /* Centrar el texto */
+    gap: 15px; /* Reducir el espacio entre la imagen y el texto */
+  }
+
+  .biography img {
+    max-width: 200%; /* Imagen ocupa el 100% del contenedor en pantallas pequeñas */
+  }
+
+  .bio-text {
+    text-align: center; /* Centrar el texto */
+  }
+
+  .bio-text h3 {
+    font-size: 1.2rem; /* Reducir tamaño de título */
+  }
+
+  .bio-text p {
+    font-size: 0.9rem; /* Reducir tamaño de texto */
+    line-height: 1.4;
+  }
+}
+
+/* Para pantallas aún más pequeñas (480px o menos), ajustar el tamaño de las fuentes */
+@media (max-width: 480px) {
+  .bio-text h3 {
+    font-size: 1rem; /* Título más pequeño */
+  }
+
+  .bio-text p {
+    font-size: 0.85rem; /* Texto aún más pequeño */
+  }
+}
+
+
+/* Línea divisoria */
+.divider-line {
+  height: 2px; /* Grosor de la línea */
+  width: 90%; /* Ancho de la línea (ajustable) */
+  background-color: #ddd; /* Color de la línea */
+  margin: 40px auto; /* Margen para separación vertical */
+}

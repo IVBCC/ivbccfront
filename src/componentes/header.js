@@ -7,6 +7,10 @@ const Header = ({onNavigate }) => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const handleNavigation = (page) => {
+    onNavigate(page);
+    setIsMenuOpen(false);  // Cierra el menú al navegar
+  };
 
   return (
     <header className="header">
@@ -21,15 +25,15 @@ const Header = ({onNavigate }) => {
       </button>
       <nav className={`navbar ${isMenuOpen ? 'navbar-open' : ''}`}>
         <ul>
-          <li><button onClick={()=>onNavigate('inicio')}>Inicio</button></li>
-          <li><button onClick={()=>onNavigate('nosotros')}>Nosotros</button></li>
-          <li><button onClick={()=>onNavigate('formacion')}>Formación</button></li>
-          <li><button onClick={()=>onNavigate('iglesias')}>Iglesias</button></li>
-          <li><button onClick={()=>onNavigate('noticias')}>Noticias</button></li>
-          <li><button onClick={()=>onNavigate('eventos')}>Eventos</button></li>
-          <li><button onClick={()=>onNavigate('publicaciones')}>Publicaciones</button></li>
-          <li><button onClick={()=>onNavigate('descargas')}>Descargas</button></li>
-          <li><button onClick={()=>onNavigate('contacto')}>Contáctanos</button></li>
+          <li><button onClick={()=>handleNavigation('inicio')}>Inicio</button></li>
+          <li><button onClick={()=>handleNavigation('nosotros')}>Nosotros</button></li>
+          <li><button onClick={()=>handleNavigation('formacion')}>Formación</button></li>
+          <li><button onClick={()=>handleNavigation('iglesias')}>Iglesias</button></li>
+          <li><button onClick={()=>handleNavigation('noticias')}>Noticias</button></li>
+          <li><button onClick={()=>handleNavigation('eventos')}>Eventos</button></li>
+          <li><button onClick={()=>handleNavigation('publicaciones')}>Publicaciones</button></li>
+          <li><button onClick={()=>handleNavigation('descargas')}>Descargas</button></li>
+          <li><button onClick={()=>handleNavigation('contacto')}>Contáctanos</button></li>
         </ul>
       </nav>
     </header>
