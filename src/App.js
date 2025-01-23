@@ -7,6 +7,7 @@ import News from './componentes/News';
 import Footer from './componentes/footer';
 import Partners from './componentes/partners';
 import AboutUs from './componentes/abouts';
+import DeclarationOfFaith from './componentes/DeclarationOfFaith';
 import '../src/componentes/styles.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       {currentSection === 'nosotros' && (
         <>
           <AboutUs />
+          <DeclarationOfFaith/>
           <Partners />
         </>
       )}

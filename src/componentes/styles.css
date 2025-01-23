@@ -715,3 +715,84 @@ p {
   background-color: #ddd; /* Color de la línea */
   margin: 40px auto; /* Margen para separación vertical */
 }
+
+/* Sección de Declaración de Fe */
+.faith-section {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.faith-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.faith-h3{
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #403434;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+/* Contenedor principal */
+.faith-container {
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centrar el contenedor */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espaciado entre filas */
+  padding: 0 40px; /* Espaciado interno en los lados */
+}
+
+/* Elementos individuales */
+.faith-item {
+  flex: 1 1 calc(33.333% - 20px); /* Tres elementos por fila */
+  text-align: center;
+}
+
+.faith-number {
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: #000000;
+  margin-bottom: 15px; /* Espacio entre el número y el texto */
+}
+
+.faith-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .faith-item {
+    flex: 1 1 calc(50% - 20px); /* Dos elementos por fila */
+  }
+
+  .faith-number {
+    font-size: 1.5rem;
+  }
+
+  .faith-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faith-item {
+    flex: 1 1 100%; /* Un elemento por fila */
+  }
+
+  .faith-number {
+    font-size: 1.4rem;
+  }
+
+  .faith-text {
+    font-size: 0.9rem;
+  }
+}
+
