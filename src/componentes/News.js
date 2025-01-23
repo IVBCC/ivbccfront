@@ -34,7 +34,7 @@ const News = () => {
             <img src={article.image} alt={article.title} />
             <h4>{article.title}</h4>
             <p>{article.description}</p>
-            <a href="#">Leer más</a>
+            <a href="#mas">Leer más</a>
           </div>
         ))}
       </div>

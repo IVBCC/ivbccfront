@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './componentes/ScrollToTop'; // Importa el componente
 import Header from './componentes/header';
 import HeroSection from './componentes/heroSection';
 import Events from './componentes/Events';
@@ -11,32 +13,38 @@ import DeclarationOfFaith from './componentes/DeclarationOfFaith';
 import '../src/componentes/styles.css';
 
 function App() {
-  const [currentSection, setCurrentSection] = useState('inicio'); // Estado para manejar la sección activa
-
-  const handleNavigation = (section) => {
-    setCurrentSection(section); // Cambia la sección actual
-  };
   return (
-    <div className="App">
-      <Header onNavigate={handleNavigation}/>
-      {currentSection === 'inicio' && (
-        <>
-          <HeroSection />
-          <Announcements />
-          <Events />
-          <News />
-          <Partners />
-        </>
-      )}
-      {currentSection === 'nosotros' && (
-        <>
-          <AboutUs />
-          <DeclarationOfFaith/>
-          <Partners />
-        </>
-      )}
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop /> {/* Componente para desplazarse al inicio */}
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSection />
+                <Announcements />
+                <Events />
+                <News />
+                <Partners />
+              </>
+            }
+          />
+          <Route
+            path="/nosotros"
+            element={
+              <>
+                <AboutUs />
+                <DeclarationOfFaith />
+                <Partners />
+              </>
+            }
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
