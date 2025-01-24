@@ -852,3 +852,142 @@ p {
   }
 }
 
+/* Página IBPS */
+.ibps-page {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Logo */
+.ibps-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ibps-logo-img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Título */
+.ibps-title-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ibps-main-title {
+  font-size: 2.5rem;
+  color: #0e0e0e;
+  margin: 0;
+}
+
+/* Texto introductorio */
+.ibps-intro-text {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  font-size: 1.2rem;
+}
+
+/* Contenedor para dos imágenes centradas */
+.ibps-images-container {
+  display: flex; /* Flexbox para alineación */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  gap: 40px; /* Espaciado entre las imágenes */
+  margin: 0 auto; /* Centra horizontalmente en el contenedor */
+  height: 70vh; /* Ocupa toda la altura del viewport */
+}
+
+/* Estilo individual de las imágenes */
+.ibps-image {
+  max-width: 33%;
+  border-radius: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pregunta */
+.ibps-question {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.ibps-question-title {
+  font-size: 2rem;
+  color: #0d0d0d;
+  margin: 0;
+}
+
+/* Texto adicional */
+.ibps-more-text {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 700px;
+  font-size: 1.1rem;
+}
+
+/* Botón de contáctanos */
+.ibps-contact-button-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.ibps-contact-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #aaa3a3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.ibps-contact-button a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.ibps-contact-button:hover {
+  background-color: #c5c0c0;
+}
+
+/* Correo y teléfono */
+.ibps-contact-info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.ibps-email,
+.ibps-phone {
+  margin: 5px 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .ibps-images-container {
+    flex-direction: column;
+  }
+
+  .ibps-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .ibps-main-title {
+    font-size: 2rem;
+  }
+
+  .ibps-intro-text,
+  .ibps-more-text {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .ibps-contact-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
