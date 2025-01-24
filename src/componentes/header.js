@@ -57,6 +57,7 @@ const Header = () => {
               <ul className="submenu">
                 <li><Link to="/formacion/cefi" onClick={closeMenu}>CEFI</Link></li>
                 <li><Link to="/formacion/ibps" onClick={closeMenu}>IBPS</Link></li>
+                <li><Link to="/formacion/inscripciones" onClick={closeMenu}>Inscripciones</Link></li>
               </ul>
             )}
           </li>

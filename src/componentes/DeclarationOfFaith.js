@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
 
 const DeclarationOfFaith = () => {
@@ -17,11 +17,32 @@ const DeclarationOfFaith = () => {
     "La necesidad de mantener conforme al Evangelio, la pureza de la Iglesia en doctrina y conducta."
   ];
 
+  useEffect(() => {
+    const items = document.querySelectorAll(".faith-item");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible"); // Agrega la clase visible
+          }
+        });
+      },
+      { threshold: 0.2 } // El 20% del elemento debe ser visible
+    );
+
+    items.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect(); // Limpieza del observador al desmontar el componente
+  }, []);
+
   return (
     <section className="faith-section">
       <h2 className="faith-title">DECLARACIÓN DE FÉ</h2>
-      <h3 className="faith-h3">LA IGLESIA CRUZADA CRISTIANA,
-      TIENE COMO BASE FUNDAMENTAL LAS SAGRADAS ESCRITURAS Y LA SIGUIENTE DECLARACIÓN DE FÉ:</h3>
+      <h3 className="faith-h3">
+        LA IGLESIA CRUZADA CRISTIANA, TIENE COMO BASE FUNDAMENTAL LAS SAGRADAS
+        ESCRITURAS Y LA SIGUIENTE DECLARACIÓN DE FÉ:
+      </h3>
       <div className="faith-container">
         {faithDeclarations.map((text, index) => (
           <div className="faith-item" key={index}>

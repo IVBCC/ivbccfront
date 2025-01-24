@@ -802,8 +802,14 @@ p {
 .faith-item {
   flex: 1 1 calc(33.333% - 20px); /* Tres elementos por fila */
   text-align: center;
+  opacity: 0; /* Comienza invisible */
+  transform: translateY(20px); /* Desplazamiento inicial */
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
+.faith-item.visible {
+  opacity: 1; /* Elemento visible */
+  transform: translateY(0); /* Vuelve a su posición original */
+}
 .faith-number {
   font-size: 1.8rem;
   font-weight: bolder;

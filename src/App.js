@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from "./componentes/ScrollToTop";
 import Header from './componentes/header';
 import HeroSection from './componentes/heroSection';
 import Events from './componentes/Events';
@@ -11,11 +12,13 @@ import AboutUs from './componentes/abouts';
 import DeclarationOfFaith from './componentes/DeclarationOfFaith';
 import CEFI from './componentes/formacion/cefi';
 import IBPS from './componentes/formacion/ibps';
+import Inscripciones from './componentes/formacion/inscripciones';
 import './componentes/styles.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <Header />
         <Routes>
@@ -37,6 +40,7 @@ function App() {
           } />
           <Route path="/formacion/cefi" element={<CEFI />} />
           <Route path="/formacion/ibps" element={<IBPS />} />
+          <Route path="/formacion/inscripciones" element={<Inscripciones />} />
         </Routes>
         <Footer />
       </div>
