@@ -2,6 +2,15 @@ import React from "react";
 import LogoUnisymes from '../../logo/logounisymes.png';
 import ImageRemotoIbps from '../../image/remotoibps.webp';
 import ImageVirtualIbps from '../../image/virtualibps.webp';
+import ImgSmestre1 from '../../image/semestre1ibps.jpg';
+import ImgSmestre2 from '../../image/semestre2ibps.jpg';
+import ImgSmestre3 from '../../image/semestre3ibps.jpg';
+import ImgSmestre4 from '../../image/semestre4ibps.jpg';
+import ImgSmestre5 from '../../image/semestre5ibps.jpg';
+import ImgSmestre6 from '../../image/semestre6ibps.jpg';
+import ImgSmestre7 from '../../image/semestre7ibps.jpg';
+import ImgSmestre8 from '../../image/semestre8ibps.jpg';
+import ImgSmestre9 from '../../image/semestre9ibps.jpg';
 import "../styles.css";
 
 const IBPS = () => {
@@ -64,7 +73,7 @@ const IBPS = () => {
       {/* Botón de contáctanos */}
       <section className="ibps-contact-button-section">
         <button className="ibps-contact-button">          
-          <a href="https://wa.me/+573187166545" target="" rel="noopener noreferrer">Contáctanos</a>
+          <a href="https://wa.me/+573164727814" target="" rel="noopener noreferrer">Contáctanos</a>
         </button>
       </section>
 
@@ -74,6 +83,85 @@ const IBPS = () => {
           ibps@unisymes.edu.co</p>
         <p className="ibps-phone">Llámanos:
           +57 316 472 78 14</p>
+      </section>
+
+      <section className="programa-estudio-text">
+        <p>
+        Programa de Estudio
+        </p>
+        <br></br>
+        <p>Nivel 1</p>
+        <p>Estudios en Biblioteología Pastoral</p>
+      </section>
+      {/* Sección de imágenes (3 imágenes en la primera fila y 2 en la segunda fila) */}
+      <section className="ibps-three-images-section">
+        <div className="ibps-images-container">
+          <img
+            src={ImgSmestre1}
+            alt="Estudiantes del IBPS"
+            className="ibps-image"
+          />
+          <img
+            src={ImgSmestre2}
+            alt="Clases del IBPS"
+            className="ibps-image"
+          />
+          <img
+            src={ImgSmestre3}
+            alt="Imagen 1"
+            className="ibps-image"
+          />
+        </div>
+      </section>
+
+      <section className="ibps-two-images-section">
+        <div className="ibps-images-container">
+          <img
+            src={ImgSmestre4}
+            alt="Imagen 2"
+            className="ibps-image"
+          />
+          <img
+            src={ImgSmestre5}
+            alt="Imagen 3"
+            className="ibps-image"
+          />
+        </div>
+      </section>
+
+      {/* Texto mediano */}
+      <section className="programa-estudio-text">
+        <p>
+          Nivel 2
+        </p>
+        <p>Estudios en Biblioteología Ministerial
+        </p>
+      </section>
+
+      {/* Sección de 4 imágenes */}
+      <section className="ibps-four-images-section">
+        <div className="ibps-images-container">
+          <img
+            src={ImgSmestre6}
+            alt="Imagen 4"
+            className="ibps-image"
+          />
+          <img
+            src={ImgSmestre7}
+            alt="Imagen 5"
+            className="ibps-image"
+          />
+          <img
+            src={ImgSmestre8}
+            alt="Imagen 6"
+            className="ibps-image"
+          />
+          <img
+            src={ImgSmestre9}
+            alt="Imagen 7"
+            className="ibps-image"
+          />
+        </div>
       </section>
     </div>
   );
