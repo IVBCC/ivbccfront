@@ -1072,3 +1072,128 @@ p {
     max-width: 100%;
   }
 }
+
+/* Sección General */
+.inscripciones-section {
+  padding: 50px 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.inscripciones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .inscripciones-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Datos de Contacto */
+.strong-siguenos{
+  margin-top: 60px;
+}
+.datos-contacto {
+  padding-right: 20px;
+  margin-top: 80px;
+}
+
+.datos-contacto-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contacto-item {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Formulario */
+.formulario-container {
+  padding-left: 20px;
+}
+
+.formulario-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.inscripciones-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.required {
+  color: red;
+  margin-left: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: left; /* Centramos el texto dentro del input */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.inscripciones-button {
+  padding: 5px 15px; /* Botón pequeño */
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center; /* Centramos el botón dentro del form */
+  transition: background-color 0.3s ease;
+}
+
+.inscripciones-button:hover {
+  background-color: #064a92;
+}
+/* NUEVO: Estilos para el select */
+.form-group select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: left;
+  background-color: #fff;
+  appearance: none; /* Elimina la apariencia nativa del navegador */
+}
+
+.form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
