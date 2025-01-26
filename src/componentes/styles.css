@@ -1197,3 +1197,31 @@ p {
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
+/* NUEVO: Estilos para Sexo y Edad */
+.sexo-edad {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espaciado entre los campos */
+}
+
+.sexo-container, .edad-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ambos ocupan el mismo espacio */
+}
+
+.sexo-container select, .edad-container input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.sexo-container select:focus, .edad-container input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+

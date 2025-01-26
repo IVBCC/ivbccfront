@@ -88,6 +88,38 @@ const Inscripciones = () => {
                 required
               />
             </div>
+            {/* NUEVO: Campo para seleccionar sexo y edad */}
+            <div className="form-group sexo-edad">
+              <div className="sexo-container">
+                <label htmlFor="sexo">
+                  Sexo<span className="required">*</span>
+                </label>
+                <select
+                  id="sexo"
+                  name="sexo"
+                  required
+                  defaultValue="" // Forzamos al usuario a elegir una opción
+                >
+                  <option value="" disabled>-- Seleccione --</option>
+                  <option value="f">F</option>
+                  <option value="m">M</option>
+                </select>
+              </div>
+              <div className="edad-container">
+                <label htmlFor="edad">
+                  Edad<span className="required">*</span>
+                </label>
+                <input
+                  type="number"
+                  id="edad"
+                  name="edad"
+                  placeholder="Edad"
+                  required
+                  min="0"
+                  max="120"
+                />
+              </div>
+            </div>
             <div className="form-group">
               <label htmlFor="comentarios">Comentarios</label>
               <textarea
