@@ -23,7 +23,7 @@ const Partners = () => {
       <div className="partners-container">
         {logos.map((logo, index) => (
           // Envolvemos cada <img> dentro de un <a> con su respectiva URL
-          <a key={index} href={logo.url} target="_blank" rel="noopener noreferrer">
+          <a key={index} href={logo.url} rel="noopener noreferrer">
             <img src={logo.src} alt={`Logo ${index + 1}`} className="partner-logo" />
           </a>
         ))}
