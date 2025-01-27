@@ -76,7 +76,7 @@ const AboutUs = () => {
         <div className="biography left fade-in-trigger">
           <img src={ImagenPasBY} alt="Pastores Blas y Yiya" />
           <div className="bio-text">
-            <h3>Ligia Molina de Pedrozo y Blas Antonio Pedrozo Florez</h3>
+            <h3>Blas Antonio Pedrozo Florez y Ligia Molina de Pedrozo</h3>
             <p>
             Como visionarios y fundadores de la iglesia, los Pastores Blas y Ligia Pedrozo sembraron la semilla de lo que hoy es una vibrante comunidad de fe. Desde sus inicios, su pasión por el evangelio y su dedicación al servicio a Dios y a los demás guiaron cada paso. Su labor incansable y su amor por las almas marcaron el camino hacia el crecimiento espiritual y el bienestar de la comunidad. Son los pilares sobre los que se construyó esta iglesia, dejando un legado perdurable de fe, amor y compromiso con el Reino de Dios.
             </p>

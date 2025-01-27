@@ -8,7 +8,7 @@ body {
   line-height: 1.6; /* Ajusta la altura de línea para mantener buena legibilidad */
   margin: 0;
   padding: 0;
-  color: #333; /* Color del texto */
+  color: #242424; /* Color del texto */
   background-color: #f9f9f9; /* Color de fondo general */
 }
 
@@ -31,7 +31,7 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #f4f4f4;
+  background-color: #d9d2d2;
   border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
