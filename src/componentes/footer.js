@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from '../logo/logocruzadacristiana.png';
 import LogoUbicacion from '../logo/ubicacion1.png';
 import LogoTelefono from '../logo/mobile.png';
 import LogoEmail from '../logo/email.png';
@@ -7,6 +6,8 @@ import LogoFacebook from '../logo/facebook.png';
 import LogoYoutube from '../logo/youtube.png';
 import LogoIg from '../logo/ig.png';
 import LogoWpp from '../logo/wpp.png';
+import LogoVB from '../logo/logoblanco.png';
+
 import './styles.css';
 
 const Footer = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
         <div className="footer-column">
           <div className="contact-logo">
             <img
-              src={Logo} /* Ruta de la imagen */
+              src={LogoVB} /* Ruta de la imagen */
               alt="Logo Cruzada Cristiana"
             />
           </div>

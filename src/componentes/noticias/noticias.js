@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Heart } from 'lucide-react'; // Librería ligera para íconos
 import Imagen1iglesia from '../../image/conazuliglesia.jpg';
 import Imagen2iglesia from '../../image/fondo.jpg';
 import Imagen3iglesia from '../../image/ministerioalabanza.jpg';
@@ -15,6 +16,17 @@ const Noticias = () => {
     Imagen2iglesia,
     Imagen3iglesia,
   ];
+
+  // Estado del contador de "Me gusta"
+  const [likes, setLikes] = useState(0);
+  const [liked, setLiked] = useState(false);
+
+  // Manejar el click del corazón
+  const handleHeartClick = () => {
+    setLiked(!liked);
+    setLikes(prevLikes => (liked ? prevLikes - 1 : prevLikes + 1));
+  };
+
 
   return (
     <section className="noticias-section">
@@ -75,8 +87,13 @@ const Noticias = () => {
           <h2 className="tarjeta-subtitulo">Canasta Familiar</h2>
           <p className="tarjeta-descripcion">
             Contribuye a nuestra campaña de apoyo con la canasta familiar y ayuda a las familias
-            más necesitadas de nuestra comunidad.
+            más necesitadas de nuestra comunidad. !Bendice con un alimento no perecedero!
           </p>
+          {/* Corazón interactivo */}
+          <div className="reaction-container" onClick={handleHeartClick}>
+            <Heart color={liked ? 'red' : 'gray'} fill={liked ? 'red' : 'none'} />
+            <span className="like-counter">{likes}</span>
+          </div>
         </div>
 
         {/* Tarjeta 3 */}

@@ -5,7 +5,8 @@ import './styles.css';
 const Announcements = () => {
   // Imágenes para el carrusel
   const images = [
-    require('../image/fondo.jpg')
+    require('../image/fondo.jpg'),
+    require('../image/imagencarruselinicio.jpeg')
   ];
 
   // Configuración del carrusel

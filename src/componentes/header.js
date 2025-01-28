@@ -1,5 +1,6 @@
 import React, { useState, useEffect  } from 'react';
 import { Link } from 'react-router-dom';
+import LogoVB from '../logo/logonegro.png';
 import './styles.css';
 
 const Header = () => {
@@ -38,8 +39,8 @@ const Header = () => {
     <header className="header">
       <div className="logo">
         <img
-          src="https://www.cruzadacristiana.org/wp-content/uploads/2024/03/Logo-Cruzada-Cristiana-Negro-1.png"
-          alt="Iglesia Cruzada Cristiana"
+          src={LogoVB}
+          alt="Iglesia Cruzada Cristiana Valle de Bendicion"
         />
       </div>
       <button className="menu-toggle" onClick={toggleMenu}>
