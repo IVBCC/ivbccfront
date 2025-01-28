@@ -13,6 +13,7 @@ import DeclarationOfFaith from './componentes/DeclarationOfFaith';
 import CEFI from './componentes/formacion/cefi';
 import IBPS from './componentes/formacion/ibps';
 import Inscripciones from './componentes/formacion/inscripciones';
+import Noticias from './componentes/noticias/noticias';
 import './componentes/styles.css';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/formacion/cefi" element={<CEFI />} />
           <Route path="/formacion/ibps" element={<IBPS />} />
           <Route path="/formacion/inscripciones" element={<Inscripciones />} />
+          <Route path="/noticias" element={<Noticias />} />
         </Routes>
         <Footer />
       </div>
