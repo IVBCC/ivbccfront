@@ -8,9 +8,16 @@ import Imagen3iglesia from '../../image/ministerioalabanza.jpg';
 import ImagenNuevaIglesia from '../../image/todalaiglesia.jpeg';
 import ImagenCanasta from '../../image/tetocaati.jpeg';
 import ImagenMinisterio from '../../image/Ayuno.jpeg';
+import FormInscripcion from '../noticias/inscripcionMinisterio.js';
 import "../styles.css";
 
 const Noticias = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   const carouselImages = [
     Imagen1iglesia, // Reemplaza con las URLs de tus imágenes
     Imagen2iglesia,
@@ -106,8 +113,9 @@ const Noticias = () => {
           <p className="tarjeta-descripcion">
             ¿Quieres ser parte de un ministerio? ¡Inscríbete ahora y sé parte de nuestra misión!
           </p>
-          <button className="tarjeta-boton">Inscribirme</button>
+          <button onClick={openModal} className="tarjeta-boton">Inscribirme</button>          
         </div>
+        <FormInscripcion isOpen={isModalOpen} onClose={closeModal}></FormInscripcion>
       </div>
     </section>
   );
