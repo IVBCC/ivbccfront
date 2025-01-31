@@ -13,7 +13,6 @@ const DeclarationOfFaith = () => {
     "Que solamente hay dos lugares como destino eterno del ser humano: El Cielo para los redimidos por el Señor Jesucristo y el infierno para los que lo rechacen.",
     "Que la regeneración del ser humano es por el Espíritu Santo y la Palabra de Dios.",
     "La unidad espiritual de todos los redimidos por la Sangre del Señor Jesucristo.",
-    "La necesidad de mantener conforme al Evangelio, la pureza de la Iglesia en doctrina y conducta.",
     "La necesidad de mantener conforme al Evangelio, la pureza de la Iglesia en doctrina y conducta."
   ];
 

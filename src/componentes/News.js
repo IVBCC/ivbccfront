@@ -14,7 +14,7 @@ const News = () => {
     },
     {
       title: 'Tu granito de arena',
-      description: '¡Dios ama al dador alegre!',
+      description: '"Porque tuve hambre, y me disteis de comer; tuve sed, y me disteis de beber; fui forastero, y me recogisteis; estuve desnudo, y me cubristeis; enfermo, y me visitasteis; en la cárcel, y vinisteis a mí." Mateo 25:35-36',
       image: ImagenCanasta,
     },
     {

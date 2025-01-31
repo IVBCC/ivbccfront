@@ -8,7 +8,7 @@ const Events = () => {
   const events = [
     {
       title: 'Miércoles de fé y poder',
-      description: 'Un evento especial para jóvenes donde se impartirán talleres y predicaciones.',
+      description: 'Ven y juntos adoremos y seamos testigos del amor y el poder de Dios en medio nuestro, mientras estudiamos su palabra.',
       image: ImagenMiercoles
     },
     {
