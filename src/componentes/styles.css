@@ -1514,3 +1514,136 @@ p {
   right: 10px;
   cursor: pointer;
 }
+
+/* Contenedor del banner */
+.publicaciones-banner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Limitar ancho máximo */
+  margin: 0 auto; /* Centrar el contenedor */
+  overflow: hidden;
+  border-radius: 8px; /* Borde redondeado opcional */
+  margin-bottom: 40px;
+}
+
+/* Imagen de fondo */
+.banner-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Capa superpuesta para el título */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título sobre la imagen */
+.banner-title {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* Contenedor de las secciones */
+.publicaciones-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: start;
+}
+
+/* Sección de noticias destacadas */
+.noticias-section {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.noticia {
+  margin-bottom: 20px;
+}
+
+.noticia-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.noticia-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+.noticia-link {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.noticia-link:hover {
+  color: #0056b3;
+}
+
+/* Sección de videos */
+.videos-section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-frame {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .publicaciones-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 1.5rem;
+  }
+  .video-frame {
+    height: 200px;
+  }
+}
+
+/* Botón de Meet */
+.meet-button {
+  background-color: #4285f4; /* Azul Google */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.meet-button:hover {
+  background-color: #3367d6; /* Azul más oscuro */
+}

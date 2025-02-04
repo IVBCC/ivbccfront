@@ -1,13 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import LogoFacebook from '../../logo/facebookinscripciones.png';
 import LogoIg from '../../logo/instagraminscripciones.png';
 import "../styles.css";
 
 const Inscripciones = () => {
+  const [formData, setFormData] = useState({
+    curso: '',
+    nombreCompleto: '',
+    correo: '',
+    telefono: '',
+    sexo: '',
+    edad: '',
+    comentario: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("http://localhost:5000/api/inscripcioncurso", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        alert("Inscripción a curso exitosa");
+        setFormData({
+          curso: '',
+          nombreCompleto: '',
+          correo: '',
+          telefono: '',
+          sexo: '',
+          edad: '',
+          comentario: '',
+        });
+      })
+      .catch((error) => {
+        console.error("Error al enviar la inscripción:", error);
+      });
+  };
+
   return (
     <section className="inscripciones-section">
       <div className="inscripciones-grid">
-        {/* Sección de datos de contacto */}
         <div className="datos-contacto">
           <h2 className="datos-contacto-title">Datos de Contacto</h2>
           <p className="contacto-item">
@@ -23,7 +67,7 @@ const Inscripciones = () => {
             <strong>Horario de Oficina:</strong> Lunes a Viernes, 8:00 AM - 5:00 PM
           </p>
 
-          <p className="strong-siguenos"><strong className="">Siguenos en nuestras redes sociales:</strong></p>
+          <p className="strong-siguenos"><strong>Siguenos en nuestras redes sociales:</strong></p>
           <br></br>
           <a href="https://www.facebook.com/p/Iglesia-Valle-De-Bendici%C3%B3n-Cruzada-Cristiana-100064649477817/" target="_blank" rel="noopener noreferrer">
               <img src={LogoFacebook} alt="Facebook" className="social-icon" />
@@ -32,20 +76,19 @@ const Inscripciones = () => {
               <img src={LogoIg} alt="Instagram" className="social-icon" />
             </a>
         </div>
-        {/* Formulario de inscripciones */}
         <div className="formulario-container">
           <h2 className="formulario-title">Formulario de Inscripciones</h2>
-          <form className="inscripciones-form">
-            {/* NUEVA SECCIÓN: Selector obligatorio */}
+          <form className="inscripciones-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="opciones">
+              <label htmlFor="curso">
                 Selecciona una opción<span className="required">*</span>
               </label>
               <select
-                id="opciones"
-                name="opciones"
+                id="curso"
+                name="curso"
+                value={formData.curso}
+                onChange={handleChange}
                 required
-                defaultValue="" // Forzamos al usuario a elegir una opción
               >
                 <option value="" disabled>-- Seleccione su curso--</option>
                 <option value="cefi">CEFI</option>
@@ -53,13 +96,15 @@ const Inscripciones = () => {
               </select>
             </div>
             <div className="form-group">
-              <label htmlFor="nombre">
+              <label htmlFor="nombreCompleto">
                 Nombre<span className="required">*</span>
               </label>
               <input
                 type="text"
-                id="nombre"
-                name="nombre"
+                id="nombreCompleto"
+                name="nombreCompleto"
+                value={formData.nombreCompleto}
+                onChange={handleChange}
                 placeholder="Nombre completo"
                 required
               />
@@ -72,6 +117,8 @@ const Inscripciones = () => {
                 type="email"
                 id="correo"
                 name="correo"
+                value={formData.correo}
+                onChange={handleChange}
                 placeholder="example@gmail.com"
                 required
               />
@@ -84,11 +131,12 @@ const Inscripciones = () => {
                 type="tel"
                 id="telefono"
                 name="telefono"
+                value={formData.telefono}
+                onChange={handleChange}
                 placeholder="123-456-7890"
                 required
               />
             </div>
-            {/* NUEVO: Campo para seleccionar sexo y edad */}
             <div className="form-group sexo-edad">
               <div className="sexo-container">
                 <label htmlFor="sexo">
@@ -97,8 +145,9 @@ const Inscripciones = () => {
                 <select
                   id="sexo"
                   name="sexo"
+                  value={formData.sexo}
+                  onChange={handleChange}
                   required
-                  defaultValue="" // Forzamos al usuario a elegir una opción
                 >
                   <option value="" disabled>-- Seleccione --</option>
                   <option value="f">F</option>
@@ -113,6 +162,8 @@ const Inscripciones = () => {
                   type="number"
                   id="edad"
                   name="edad"
+                  value={formData.edad}
+                  onChange={handleChange}
                   placeholder="Edad"
                   required
                   min="0"
@@ -121,15 +172,17 @@ const Inscripciones = () => {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="comentarios">Comentarios</label>
+              <label htmlFor="comentario">Comentarios</label>
               <textarea
-                id="comentarios"
-                name="comentarios"
+                id="comentario"
+                name="comentario"
+                value={formData.comentario}
+                onChange={handleChange}
                 rows="4"
                 placeholder="Escribe tus comentarios aquí"
               ></textarea>
             </div>
-            <button type="submit" className="inscripciones-button">
+            <button /* type="submit" */ className="inscripciones-button">
               Enviar
             </button>
           </form>
