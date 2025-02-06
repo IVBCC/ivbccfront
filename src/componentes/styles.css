@@ -31,12 +31,12 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #d9d2d2;
+  background-color: #168ccc;
   border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(220, 210, 210, 0.1);
 }
 
 .header .logo img {
@@ -50,7 +50,7 @@ p {
   background: none;
   border: none;
   cursor: pointer;
-  color: #333;
+  color: #f2f2f2;
 }
 
 .navbar {
@@ -71,6 +71,12 @@ p {
   gap: 15px;
   margin: 0;
   padding: 0;
+}
+
+.navbar-ul li a {
+  text-decoration: none;
+  color: #fdf6f6;  /* Color de texto predeterminado (gris oscuro) */
+  transition: color 0.3s ease;
 }
 
 .navbar button {
@@ -99,7 +105,9 @@ p {
   .menu-toggle {
     display: block; /* Muestra el botón hamburguesa */
   }
-
+  .navbar-ul li a {
+    color: #000000;  /* Color de texto predeterminado (gris oscuro) */
+  }
   .navbar {
     display: none; /* Esconde el menú por defecto */
     position: absolute;
@@ -147,6 +155,7 @@ p {
 
 .submenu li a {
   white-space: nowrap;
+  color: #000000;
 }
 
 .submenu li a:hover {
@@ -1612,7 +1621,20 @@ p {
   height: 250px;
   border: none;
   border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.video-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.video-card p{
   margin-bottom: 20px;
+}
+.video-card {
+  text-align: center;  
 }
 
 /* Responsividad */
@@ -1646,4 +1668,25 @@ p {
 
 .meet-button:hover {
   background-color: #3367d6; /* Azul más oscuro */
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background-color: #3367d6;
+  transform: translateY(-3px);
 }

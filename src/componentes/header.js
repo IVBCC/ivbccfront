@@ -1,6 +1,6 @@
 import React, { useState, useEffect  } from 'react';
 import { Link } from 'react-router-dom';
-import LogoVB from '../logo/logonegro.png';
+import LogoVBBlanco from '../logo/logoblanco.png';
 import './styles.css';
 
 const Header = () => {
@@ -39,7 +39,7 @@ const Header = () => {
     <header className="header">
       <div className="logo">
         <img
-          src={LogoVB}
+          src={LogoVBBlanco}
           alt="Iglesia Cruzada Cristiana Valle de Bendicion"
         />
       </div>
@@ -47,7 +47,7 @@ const Header = () => {
         ☰
       </button>
       <nav className={`navbar ${isMenuOpen ? 'navbar-open' : ''}`}>
-        <ul>
+        <ul className='navbar-ul'>
           <li><Link to="/" onClick={closeMenu}>Inicio</Link></li>
           <li><Link to="/nosotros" onClick={closeMenu}>Nosotros</Link></li>
           <li className="dropdown">

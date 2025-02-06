@@ -77,27 +77,40 @@ function Publicaciones() {
 
                 {/* Sección de Videos */}
                 <section className="videos-section">
-                    <h2>Videos</h2>
-                    <iframe
-                        className="video-frame"
-                        src="https://www.youtube.com/embed/n2xU4Lvwo7I"
-                        title="Video 1"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                    ></iframe>
+                    {[
+                        {
+                            title: "Dominicales",
+                            src: "https://www.youtube.com/embed/n2xU4Lvwo7I",
+                            description: "Bienvenidos a nuestra transmision. Domingos de palabra poderosa, comparte con amigos y familiares"
+                        },
+                        {
+                            title: "Miércoles de estudio bíblico",
+                            src: "https://www.youtube.com/embed/GtR9vCxBhvU",
+                            description: "Bienvenidos a nuestra transmision. TIEMPO DE CONQUISTA. Miércoles de estudio bíblico, APRENDAMOS DEL LIBRO DE JOSUÉ. Comparte con amigos y familiares de YouTube."
+                        }
+                    ].map((video, index) => (
+                        <div key={index} className="video-card">
+                            <h3>{video.title}</h3>
+                            <iframe
+                                className="video-frame"
+                                src={video.src}
+                                title={video.title}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                            <p>{video.description}</p>
+                        </div>
+                    ))}
 
-                    <iframe
-                        className="video-frame"
-                        src="https://www.youtube.com/embed/GtR9vCxBhvU"
-                        title="Video 2"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                    ></iframe>
-
-                    <video width="100%" height="auto" controls>
-                        <source src={VideoMujeres} type="video/mp4" />
-                    </video>
+                    <div className="video-card">
+                        <h3>Conferencia para Mujeres</h3>
+                        <video width="100%" controls>
+                            <source src={VideoMujeres} type="video/mp4" />
+                        </video>
+                        <p>Un evento especial para mujeres, lleno de enseñanza y fe.</p>
+                    </div>
                 </section>
+
             </div>
         </>
     );
