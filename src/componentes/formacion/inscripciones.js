@@ -24,15 +24,18 @@ const Inscripciones = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://ivbccserve.vercel.app/api/inscripcioncurso", {
+    fetch("https://ivbccserve.vercel.app/api/inscripcioncurso" /*http://127.0.0.1:5000/api/inscripcioncurso */, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then((response) => response.json().then((data) => ({ status: response.status, body: data }))) // Captura status
+      .then(({ status, body }) => {
+        if (status >= 400) {
+          throw new Error(body.error || "Error desconocido");
+        }
         alert("Inscripción a curso exitosa");
         setFormData({
           curso: '',
@@ -45,9 +48,10 @@ const Inscripciones = () => {
         });
       })
       .catch((error) => {
-        console.error("Error al enviar la inscripción:", error);
+        alert(`Error: ${error.message}`);
       });
   };
+
 
   return (
     <section className="inscripciones-section">
@@ -70,11 +74,11 @@ const Inscripciones = () => {
           <p className="strong-siguenos"><strong>Siguenos en nuestras redes sociales:</strong></p>
           <br></br>
           <a href="https://www.facebook.com/p/Iglesia-Valle-De-Bendici%C3%B3n-Cruzada-Cristiana-100064649477817/" target="_blank" rel="noopener noreferrer">
-              <img src={LogoFacebook} alt="Facebook" className="social-icon" />
-            </a>
-            <a href="https://www.instagram.com/iglesiavalledebendicion?igsh=ZTBrOHAzanM1NjFr" target="_blank" rel="noopener noreferrer">
-              <img src={LogoIg} alt="Instagram" className="social-icon" />
-            </a>
+            <img src={LogoFacebook} alt="Facebook" className="social-icon" />
+          </a>
+          <a href="https://www.instagram.com/iglesiavalledebendicion?igsh=ZTBrOHAzanM1NjFr" target="_blank" rel="noopener noreferrer">
+            <img src={LogoIg} alt="Instagram" className="social-icon" />
+          </a>
         </div>
         <div className="formulario-container">
           <h2 className="formulario-title">Formulario de Inscripciones</h2>
