@@ -24,7 +24,7 @@ const Inscripciones = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:5000/api/inscripcioncurso", {
+    fetch("https://ivbccserve.vercel.app/api/inscripcioncurso", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -182,7 +182,7 @@ const Inscripciones = () => {
                 placeholder="Escribe tus comentarios aquí"
               ></textarea>
             </div>
-            <button /* type="submit" */ className="inscripciones-button">
+            <button type="submit" className="inscripciones-button">
               Enviar
             </button>
           </form>
