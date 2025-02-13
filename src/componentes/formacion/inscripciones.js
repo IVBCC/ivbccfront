@@ -178,6 +178,7 @@ const Inscripciones = () => {
             <div className="form-group">
               <label htmlFor="comentario">Comentarios</label>
               <textarea
+                required
                 id="comentario"
                 name="comentario"
                 value={formData.comentario}
