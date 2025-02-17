@@ -97,7 +97,7 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
                 <option value="aseo">Aseo</option>
                 <option value="maestro">Maestro(a)</option>
               </select>
-              <button /* type="submit" */ className="submit-button">
+              <button type="submit" className="submit-button">
                 Enviar
               </button>
             </form>
