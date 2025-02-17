@@ -27,8 +27,11 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then((response) => response.json().then((data) => ({ status: response.status, body: data })))
+      .then(({ status, body }) => {
+        if (status >= 400) {
+          throw new Error(body.error || "Error desconocido");
+        }
         alert("Inscripción exitosa");
         setFormData({
           cedula: '',
