@@ -20,7 +20,7 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://ivbccfront.vercel.app/noticias", {
+    fetch("https://ivbccfront.vercel.app/api/forms", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
