@@ -91,7 +91,7 @@ const Noticias = () => {
             alt="Canasta de amor"
             className="tarjeta-image"
           />
-          <h2 className="tarjeta-subtitulo">Canasta Familiar</h2>
+          <h2 className="tarjeta-subtitulo">Canasta</h2>
           <p className="tarjeta-descripcion">
             Haz parte de nuestra campaña Canasta de Amor, donde bendecimos a familias de nuestra congregación y mostramos el amor de Dios hacia los demás. !Bendice con un alimento no perecedero!
           </p>
