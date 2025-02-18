@@ -91,7 +91,7 @@ const Noticias = () => {
             alt="Canasta de amor"
             className="tarjeta-image"
           />
-          <h2 className="tarjeta-subtitulo">Canasta</h2>
+          <h2 className="tarjeta-subtitulo">Canasta de Amor</h2>
           <p className="tarjeta-descripcion">
             Haz parte de nuestra campaña Canasta de Amor, donde bendecimos a familias de nuestra congregación y mostramos el amor de Dios hacia los demás. !Bendice con un alimento no perecedero!
           </p>
@@ -109,9 +109,9 @@ const Noticias = () => {
             alt="Inscripciones"
             className="tarjeta-image"
           />
-          <h2 className="tarjeta-subtitulo">Inscripciones Ministerio</h2>
+          <h2 className="tarjeta-subtitulo">¡Inscribete ya!</h2>
           <p className="tarjeta-descripcion">
-            ¿Quieres ser parte de un ministerio? ¡Inscríbete ahora y sé parte de nuestra misión!
+            ¿Quieres ser parte de nuestro ministerio? ¡Inscríbete ahora y sé parte de nuestra misión!
           </p>
           <button onClick={openModal} className="tarjeta-boton">Inscribirme</button>          
         </div>
