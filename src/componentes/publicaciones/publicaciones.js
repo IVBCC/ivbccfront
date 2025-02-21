@@ -3,6 +3,8 @@ import ImagenPrincipal from '../../image/conzauliglesia2.1.png';
 import ImagenConsagracion from '../../image/consagracion.jpeg';
 import ImagenMeet from '../../image/meet.jpeg';
 import VideoMujeres from '../../video/mujeres.mp4';
+import VideoMJR from '../../video/MJR220225.mp4';
+import ImagenMJR from '../../image/MJR.jpeg';
 import '../styles.css';
 
 function Publicaciones() {
@@ -61,6 +63,20 @@ function Publicaciones() {
                         </div>
 
                         {/* Tarjeta 3 */}
+                        <div className="tarjeta">
+                            <img
+                                src={ImagenMJR}
+                                alt="MJR"
+                                className="tarjeta-image"
+                            />
+                            <h2 className="tarjeta-subtitulo">Ministerio Juvenil Relevante</h2>
+                            <p className="tarjeta-descripcion">
+                                Faltan solo UN DIA para nuestro servicio juvenil, y queremos recordarles que ¡Los esperamos! este sábado a partir de las 6:00pm.
+                                Prográmate desde ya para venir a adorar, compartir y aprender más de la palabra de Dios. No faltes!! 😎😁
+                            </p>
+                        </div>
+
+                        {/* Tarjeta  */}
                         {/* <div className="tarjeta">
                             <img
                                 src=''
@@ -108,6 +124,14 @@ function Publicaciones() {
                             <source src={VideoMujeres} type="video/mp4" />
                         </video>
                         <p>Un evento especial para mujeres, lleno de enseñanza y fe.</p>
+                    </div>
+
+                    <div className="video-card">
+                        <h3>MJR</h3>
+                        <video width="100%" controls>
+                            <source src={VideoMJR} type="video/mp4" />
+                        </video>
+                        <p>¡Los esperamos! este sábado a partir de las 6:00pm.</p>
                     </div>
                 </section>
 
