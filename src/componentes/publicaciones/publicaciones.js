@@ -5,6 +5,8 @@ import ImagenMeet from '../../image/meet.jpeg';
 import VideoMujeres from '../../video/mujeres.mp4';
 import VideoMJR from '../../video/MJR220225.mp4';
 import ImagenMJR from '../../image/MJR.jpeg';
+import LogoUbicacion from '../../logo/ubicacion1.png';
+
 import '../styles.css';
 
 function Publicaciones() {
@@ -132,6 +134,17 @@ function Publicaciones() {
                             <source src={VideoMJR} type="video/mp4" />
                         </video>
                         <p>¡Los esperamos! este sábado a partir de las 6:00pm.</p>
+                        <p>¿Cómo llegar?</p>
+                        <a href="https://maps.app.goo.gl/nM4W2taj26KmrZmD6" // Reemplaza con la ubicación exacta
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="map-link">
+                            <img
+                                src={LogoUbicacion}
+                                alt="Google Maps"
+                                className="map-logo"
+                            />
+                        </a>
                     </div>
                 </section>
 

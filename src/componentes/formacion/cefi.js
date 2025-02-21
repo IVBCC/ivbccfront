@@ -17,6 +17,10 @@ const CEFI = () => {
     { question: "¿Cómo descargo el material?", answer: "Haz clic en el botón Descargar para obtener el material." },
     { question: "¿El material es gratuito?", answer: "¡Haz clic en el botón Descargar y averigualo!" },
     { question: "¿Qué temas se cubren?", answer: "Se cubren temas clave para mejorar tu desempeño en el ICFES." },
+    { question: "¿Quienes pueden hacer CEFI?", answer: "Todas las personas que han hecho su decisión de fe y, para los niveles 3 y 4, los aspirantes deben estar bautizados." },
+    { question: "¿Cuánto cuesta hacer CEFI?", answer: "CEFI no tiene costo, solo debes adquirir el manual y disponerte para aprender." },
+    { question: "¿Qué modalidades tiene CEFI?", answer: "Puedes estar en la modalidad presencial, virtual o personalizado." },
+    { question: "¿Cuánto tiempo demora el curso de CEFI?", answer: "Cada módulo tiene una duración de seis meses con entrega de certificado." }
   ];
 
 
@@ -64,6 +68,13 @@ const CEFI = () => {
           <button className="download-button">Descargar</button>
         </div>
       </div>
+
+      <section className="button-cefi-ibps">
+        <button className="ibps-cefi-button">          
+          <a href="https://ivbccfront.vercel.app/formacion/inscripciones" target="" rel="noopener noreferrer">Inscribete</a>
+        </button>
+      </section>
+
       <div className="faq-section">
         <h2 className='question-h2'>Preguntas Frecuentes</h2>
         {faqs.map((faq, index) => (

@@ -163,6 +163,13 @@ const IBPS = () => {
           />
         </div>
       </section>
+
+      <section className="button-cefi-ibps">
+        <button className="ibps-cefi-button">          
+          <a href="https://ivbccfront.vercel.app/formacion/inscripciones" target="" rel="noopener noreferrer">Inscribete</a>
+        </button>
+      </section>
+
     </div>
   );
 };

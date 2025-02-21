@@ -22,7 +22,11 @@ const Footer = () => {
             />
           </div>
           <div className="footer-contact-item">
-            <img src={LogoUbicacion} alt="Dirección" className="contact-icon" />
+            <a href="https://maps.app.goo.gl/nM4W2taj26KmrZmD6" // Reemplaza con la ubicación exacta
+              target="_blank"
+              rel="noopener noreferrer"
+              className="map-link"><img src={LogoUbicacion} alt="Dirección" className="contact-icon" /></a>
+
             <p>Valledupar, Colombia</p>
             <p> - Calle 18 #11-114 B. Gaitán
             </p>
