@@ -1,7 +1,9 @@
 import React from 'react';
 import ImagenMiercoles from '../image/Miercoles.jpeg';
 import ImagenAyuno from '../image/Ayuno.jpeg';
-import ImagenDomingo from '../image/Domingo.jpeg';
+import ImagenDominical from '../image/Dominical.jpeg';
+import LogoFacebook from '../logo/facebookinscripciones.png';
+import LogoYoutube from '../logo/youtubeivb.png';
 import './styles.css';
 
 const Events = () => {
@@ -18,8 +20,9 @@ const Events = () => {
     },
     {
       title: 'Dominicales',
-      description: 'Un tiempo para disfrutar de la presencia de Dios y seguir preparándonos para conquistar sus promesas.',
-      image: ImagenDomingo
+      description: 'Un tiempo para disfrutar de la presencia de Dios y seguir preparándonos para conquistar sus promesas. ¡Conéctate a nuestros lives!',
+      image: ImagenDominical,
+      showIcons: true
     },
   ];
 
@@ -33,6 +36,17 @@ const Events = () => {
             <img src={event.image} alt={event.title} className="event-image" />
             <h3>{event.title}</h3>
             <p>{event.description}</p>
+            {event.showIcons && (
+              <div className="event-icons">
+                <a href="https://www.facebook.com/p/Iglesia-Valle-De-Bendici%C3%B3n-Cruzada-Cristiana-100064649477817/" target="_blank" rel="noopener noreferrer">
+                  <img src={LogoFacebook} alt="Facebook" className="social-icon" />
+                </a>
+                
+                <a href="https://www.youtube.com/@iglesiavalledebendicioncru4554" target="_blank" rel="noopener noreferrer">
+                  <img src={LogoYoutube} alt="YouTube" className="social-icon" />
+                </a>
+              </div>
+            )}
           </div>
         ))}
       </div>

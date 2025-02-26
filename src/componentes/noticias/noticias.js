@@ -7,7 +7,7 @@ import Imagen2iglesia from '../../image/fondo.jpg';
 import Imagen3iglesia from '../../image/ministerioalabanza.jpg';
 import ImagenNuevaIglesia from '../../image/todalaiglesia.jpeg';
 import ImagenCanasta from '../../image/tetocaati.jpeg';
-import ImagenMinisterio from '../../image/Ayuno.jpeg';
+import ImagenMinisterio from '../../image/InscripcionMinisterio.jpeg';
 import FormInscripcion from '../noticias/inscripcionMinisterio.js';
 import "../styles.css";
 

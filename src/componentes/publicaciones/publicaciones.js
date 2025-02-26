@@ -6,6 +6,8 @@ import VideoMujeres from '../../video/mujeres.mp4';
 import VideoMJR from '../../video/MJR220225.mp4';
 import ImagenMJR from '../../image/MJR.jpeg';
 import LogoUbicacion from '../../logo/ubicacion1.png';
+import LogoTiktokMJR from '../../logo/tiktok.png';
+import LogoIgMJR from '../../logo/instagraminscripciones.png';
 
 import '../styles.css';
 
@@ -73,9 +75,15 @@ function Publicaciones() {
                             />
                             <h2 className="tarjeta-subtitulo">Ministerio Juvenil Relevante</h2>
                             <p className="tarjeta-descripcion">
-                                Faltan solo UN DIA para nuestro servicio juvenil, y queremos recordarles que ¡Los esperamos! este sábado a partir de las 6:00pm.
+                                ¡Los esperamos! este sábado a partir de las 6:00pm.
                                 Prográmate desde ya para venir a adorar, compartir y aprender más de la palabra de Dios. No faltes!! 😎😁
                             </p>
+                            <a href="https://www.tiktok.com/@jovenes.relevantes02?_t=ZS-8uDC1BH5TBi&_r=1" target="_blank" rel="noopener noreferrer">
+                                <img src={LogoTiktokMJR} alt="TiktokMJR" />
+                            </a>
+                            <a href="https://www.instagram.com/ministerio_juvenil_relevante/" target="_blank" rel="noopener noreferrer">
+                                <img src={LogoIgMJR} alt="IgMJR" />
+                            </a>
                         </div>
 
                         {/* Tarjeta  */}

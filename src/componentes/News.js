@@ -20,14 +20,13 @@ const News = () => {
     {
       title: '¡Nuestro ministerio!',
       description: 'Haz parte de nuestro ministerio, ven y pon a prueba el Don que Dios te ha dado.',
-      image: ImagenMinisterio,
+      image: ImagenMinisterio,      
     },
   ];
 
   return (
     <section className="news-section">
-      <h4>Últimas Noticias</h4>
-      <h2>Entérate de lo nuevo</h2>
+      <h2>Últimas Noticias</h2>
       <div className="news-container">
         {articles.map((article, index) => (
           <div key={index} className="news-card">
