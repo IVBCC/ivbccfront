@@ -18,8 +18,8 @@ const News = () => {
       image: ImagenCanasta,
     },
     {
-      title: '¡Nuestro ministerio!',
-      description: 'Haz parte de nuestro ministerio, ven y pon a prueba el Don que Dios te ha dado.',
+      title: '¡Ministerios!',
+      description: 'Contribuye con el crecimiento de la iglesia, poniendo a su servicio los dones y talentos que Dios te ha dado.',
       image: ImagenMinisterio,      
     },
   ];

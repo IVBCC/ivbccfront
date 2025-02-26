@@ -6,7 +6,7 @@ import Imagen1iglesia from '../../image/conazuliglesia.jpg';
 import Imagen2iglesia from '../../image/fondo.jpg';
 import Imagen3iglesia from '../../image/ministerioalabanza.jpg';
 import ImagenNuevaIglesia from '../../image/todalaiglesia.jpeg';
-import ImagenCanasta from '../../image/tetocaati.jpeg';
+import ImagenCanasta from '../../image/canasta.jpeg';
 import ImagenMinisterio from '../../image/InscripcionMinisterio.jpeg';
 import FormInscripcion from '../noticias/inscripcionMinisterio.js';
 import "../styles.css";
