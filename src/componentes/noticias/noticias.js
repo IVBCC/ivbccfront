@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState  } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Heart } from 'lucide-react'; // Librería ligera para íconos
@@ -11,7 +11,7 @@ import ImagenMinisterio from '../../image/InscripcionMinisterio.jpeg';
 import FormInscripcion from '../noticias/inscripcionMinisterio.js';
 import "../styles.css";
 
-const Noticias = () => {
+const Noticias = () => {  
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,7 +33,6 @@ const Noticias = () => {
     setLiked(!liked);
     setLikes(prevLikes => (liked ? prevLikes - 1 : prevLikes + 1));
   };
-
 
   return (
     <section className="noticias-section">
@@ -69,9 +68,9 @@ const Noticias = () => {
       </p>
 
       {/* Tarjetas */}
-      <div className="tarjetas-container">
+      <div className="tarjetas-container" id="todas">
         {/* Tarjeta 1 */}
-        <div className="tarjeta" id="iglesia">
+        <div className="tarjeta" >
           <img
             src={ImagenNuevaIglesia}
             alt="Nueva iglesia"

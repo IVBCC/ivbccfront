@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ImagenIglesia from '../image/iglesia.jpeg';
 import ImagenCanasta from '../image/canastadeamor.jpeg';
 import ImagenMinisterio from '../image/ministerio.jpeg';
@@ -6,6 +7,20 @@ import './styles.css';
 
 
 const News = () => {
+
+  const navigate = useNavigate();
+
+  const handleNavigation = (e) => {
+    e.preventDefault();
+    navigate('/noticias#todas');
+    setTimeout(() => {
+      const element = document.querySelector("#todas");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100); // Espera un poco para asegurarse de que la página ha cargado
+  };
+
   const articles = [
     {
       title: '¡Nueva iglesia!',
@@ -33,7 +48,7 @@ const News = () => {
             <img src={article.image} alt={article.title} />
             <h4>{article.title}</h4>
             <p>{article.description}</p>
-            <a href="https://ivbccfront.vercel.app/noticias#iglesia">Leer más</a>
+            <a href="/noticias#todas" onClick={handleNavigation}>Leer más</a>
           </div>
         ))}
       </div>
