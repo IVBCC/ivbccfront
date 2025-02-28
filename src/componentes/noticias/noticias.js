@@ -71,13 +71,13 @@ const Noticias = () => {
       {/* Tarjetas */}
       <div className="tarjetas-container">
         {/* Tarjeta 1 */}
-        <div className="tarjeta">
+        <div className="tarjeta" id="iglesia">
           <img
             src={ImagenNuevaIglesia}
             alt="Nueva iglesia"
             className="tarjeta-image"
           />
-          <h2 className="tarjeta-subtitulo">Nueva Iglesia</h2>
+          <h2 className="tarjeta-subtitulo" >Nueva Iglesia</h2>
           <p className="tarjeta-descripcion">
             ¡Estamos emocionados de anunciar la apertura de una nueva iglesia! Únete a nosotros
             para celebrar este gran logro.
