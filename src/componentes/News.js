@@ -33,7 +33,7 @@ const News = () => {
             <img src={article.image} alt={article.title} />
             <h4>{article.title}</h4>
             <p>{article.description}</p>
-            <a href="http://localhost:3000/noticias#iglesia">Leer más</a>
+            <a href="https://ivbccfront.vercel.app/noticias#iglesia">Leer más</a>
           </div>
         ))}
       </div>
