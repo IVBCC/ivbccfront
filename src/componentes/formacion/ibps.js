@@ -63,7 +63,7 @@ const IBPS = () => {
       {/* Otro texto */}
       <section className="ibps-more-text">
         <p>
-          El Instituto Bíblico Patricio Symes IBPS es una institución sin ánimo de lucro que desarrolla su actividad con el auspicio de la Iglesia Cruzada Cristiana. Lleva el nombre de uno de los pioneros de la evangelización en Colombia, el misionero australiano Patricio Symes, que arribó a nuestro país en 1933. El es un ejemplo desafiante para la fe cristiana. en pro de la evangelización y el crecimiento integral de los pastores y líderes.
+          El Instituto Bíblico Patricio Symes IBPS es una institución sin ánimo de lucro que desarrolla su actividad con el auspicio de la Iglesia Cruzada Cristiana. Lleva el nombre de uno de los pioneros de la evangelización en Colombia, el misionero australiano Patricio Symes, que arribó a nuestro país en 1933. El es un ejemplo desafiante para la fe cristiana en pro de la evangelización y el crecimiento integral de los pastores y líderes.
         </p>
         <br></br>
         <p>El IBPS continua con este legado.
@@ -73,16 +73,16 @@ const IBPS = () => {
       {/* Botón de contáctanos */}
       <section className="ibps-contact-button-section">
         <button className="ibps-contact-button">          
-          <a href="https://wa.me/+573164727814" target="" rel="noopener noreferrer">Contáctanos</a>
+          <a href="https://wa.me/+573162408575" target="blank" rel="noopener noreferrer">Contáctanos</a>
         </button>
       </section>
 
       {/* Correo y Teléfono */}
       <section className="ibps-contact-info">
         <p className="ibps-email">Escríbenos:
-          ibps@unisymes.edu.co</p>
+        webivbcc@gmail.com</p>
         <p className="ibps-phone">Llámanos:
-          +57 316 472 78 14</p>
+          +57 316 240 85 75</p>
       </section>
 
       <section className="programa-estudio-text">

@@ -950,7 +950,7 @@ p {
 .ibps-contact-button {
   padding: 10px 20px;
   font-size: 1.2rem;
-  background-color: #aaa3a3;
+  background-color: #439c26;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -962,7 +962,7 @@ p {
 }
 
 .ibps-contact-button:hover {
-  background-color: #c5c0c0;
+  background-color: #77b92f;
 }
 
 .button-cefi-ibps {
