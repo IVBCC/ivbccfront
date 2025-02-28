@@ -55,7 +55,7 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
             <h2>INSCRIPCIÓN A MINISTERIO</h2>
             <form className="modal-form" onSubmit={handleSubmit}>
               <input
-                type="text"
+                type="number"
                 name="cedula"
                 placeholder="Cédula"
                 value={formData.cedula}
