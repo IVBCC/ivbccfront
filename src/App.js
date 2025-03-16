@@ -15,6 +15,7 @@ import IBPS from './componentes/formacion/ibps';
 import Inscripciones from './componentes/formacion/inscripciones';
 import Noticias from './componentes/noticias/noticias';
 import Publicaciones from './componentes/publicaciones/publicaciones';
+import Contactenos from './componentes/contactenos/contacto';
 import './componentes/styles.css';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route path="/formacion/inscripciones" element={<Inscripciones />} />
           <Route path="/noticias" element={<Noticias />} />
           <Route path="/publicaciones" element={<Publicaciones />} />
+          <Route path="/contacto" element={<Contactenos />} />
         </Routes>
         <Footer />
       </div>

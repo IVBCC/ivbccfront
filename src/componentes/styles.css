@@ -1724,3 +1724,90 @@ p {
   display: inline-block;
   margin-top: 2px;
 }
+
+.contacto-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contacto-titulo {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Contenedor principal en dos columnas */
+.contacto-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Estilo del formulario */
+.contacto-formulario {
+  flex: 1;
+  min-width: 300px;
+  margin-right: 20px;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.contacto-form button {
+  padding: 10px 20px;
+  background: #0056b3;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 50%; /* Ajusta el ancho si es necesario */
+  text-align: center;
+}
+
+/* Estilo del mapa e imagen */
+.contacto-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.contacto-imagen {
+  width: 80%;
+  height: 40%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.contacto-mapa {
+  width: 100%;
+  height: 340px;
+  border: 1;
+  border-radius: 10px;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+  .contacto-contenido {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Reduce el espacio en móviles */
+  }
+}
