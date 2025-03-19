@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles.css";
-import ImagenMapa from '../../image/imagencarruselinicio.jpeg';
+import ImagenMapa from '../../image/fondo.jpg';
 
 const Contacto = () => {
   return (
@@ -17,10 +17,10 @@ const Contacto = () => {
             <input type="email" placeholder="Ingrese su correo" required />
 
             <label>Teléfono o celular:</label>
-            <input type="text" placeholder="+57-000-000-0000" required />
+            <input type="number" placeholder="+57" required />
 
             <label>Iglesia ICC:</label>
-            <input type="text" placeholder="Iglesia Cruzada Cristiana" required />
+            <input type="text" placeholder="¿A qué iglesia perteneces?" required />
 
             <label>Mensaje:</label>
             <textarea placeholder="Escriba su mensaje" required></textarea>
