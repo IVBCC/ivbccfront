@@ -1,11 +1,14 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LogoVBBlanco from '../logo/logoblanco.png';
+import { FaSearch } from 'react-icons/fa';
 import './styles.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false); // Estado para la barra de búsqueda
+  const [searchQuery, setSearchQuery] = useState('');
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,6 +21,10 @@ const Header = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
     setIsSubMenuOpen(false);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
   };
 
   // Cierra el submenú al hacer clic fuera
@@ -70,6 +77,25 @@ const Header = () => {
           <li><Link to="/contacto" onClick={closeMenu}>Contacto</Link></li>
         </ul>
       </nav>
+      {/* Icono de búsqueda */}
+      <div className="search-container">
+        <FaSearch className="search-icon" onClick={toggleSearch} />
+
+        {/* Contenedor de búsqueda que se expande sobre el header */}
+        {isSearchOpen && (
+          <div className="search-overlay">
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Buscar"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button className="close-search" onClick={toggleSearch}>✖</button>
+          </div>
+        )}
+
+      </div>
     </header>
   );
 };
