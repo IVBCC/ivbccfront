@@ -4,11 +4,26 @@ import LogoVBBlanco from '../logo/logoblanco.png';
 import { FaSearch } from 'react-icons/fa';
 import './styles.css';
 
+// Lista de enlaces para buscar
+const links = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Nosotros', path: '/nosotros' },
+  { name: 'CEFI', path: '/formacion/cefi' },
+  { name: 'IBPS', path: '/formacion/ibps' },
+  { name: 'Inscripciones', path: '/formacion/inscripciones' },
+  { name: 'Iglesias', path: '/iglesias' },
+  { name: 'Noticias', path: '/noticias' },
+  { name: 'Eventos', path: '/eventos' },
+  { name: 'Publicaciones', path: '/publicaciones' },
+  { name: 'Descargas', path: '/descargas' },
+  { name: 'Contacto', path: '/contacto' }
+];
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false); // Estado para la barra de búsqueda
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [filteredLinks, setFilteredLinks] = useState([]); // Estado para almacenar resultados de búsqueda
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -25,36 +40,30 @@ const Header = () => {
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
+    setSearchQuery(''); // Limpiar búsqueda al abrir/cerrar
+    setFilteredLinks([]); // Reiniciar resultados
   };
 
-  // Cierra el submenú al hacer clic fuera
+  // Filtrar enlaces según la búsqueda
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      const navbar = document.querySelector('.navbar');
-      if (navbar && !navbar.contains(event.target)) {
-        setIsSubMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('click', handleOutsideClick);
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
+    if (searchQuery.trim() === '') {
+      setFilteredLinks([]);
+    } else {
+      const results = links.filter(link =>
+        link.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredLinks(results);
+    }
+  }, [searchQuery]);
 
   return (
     <header className="header">
       <div className="logo">
-        <img
-          src={LogoVBBlanco}
-          alt="Iglesia Cruzada Cristiana Valle de Bendicion"
-        />
+        <img src={LogoVBBlanco} alt="Iglesia Cruzada Cristiana Valle de Bendicion" />
       </div>
-      <button className="menu-toggle" onClick={toggleMenu}>
-        ☰
-      </button>
+      <button className="menu-toggle" onClick={toggleMenu}>☰</button>
       <nav className={`navbar ${isMenuOpen ? 'navbar-open' : ''}`}>
-        <ul className='navbar-ul'>
+        <ul className="navbar-ul">
           <li><Link to="/" onClick={closeMenu}>Inicio</Link></li>
           <li><Link to="/nosotros" onClick={closeMenu}>Nosotros</Link></li>
           <li className="dropdown">
@@ -77,24 +86,36 @@ const Header = () => {
           <li><Link to="/contacto" onClick={closeMenu}>Contacto</Link></li>
         </ul>
       </nav>
+
       {/* Icono de búsqueda */}
       <div className="search-container">
         <FaSearch className="search-icon" onClick={toggleSearch} />
 
-        {/* Contenedor de búsqueda que se expande sobre el header */}
+        {/* Barra de búsqueda */}
         {isSearchOpen && (
           <div className="search-overlay">
             <input
               type="text"
               className="search-input"
-              placeholder="Buscar"
+              placeholder="Buscar..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button className="close-search" onClick={toggleSearch}>✖</button>
+
+            {/* Mostrar resultados de búsqueda */}
+            {filteredLinks.length > 0 && (
+              <ul className="search-results">
+                {filteredLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.path} onClick={toggleSearch}>{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+
           </div>
         )}
-
       </div>
     </header>
   );
