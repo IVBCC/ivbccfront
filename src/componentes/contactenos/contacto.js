@@ -22,7 +22,7 @@ const Contacto = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://ivbccserve.vercel.app/api/enviar-correo", {
+      const response = await fetch("https://ivbccserve.vercel.app/api/enviar-correo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
