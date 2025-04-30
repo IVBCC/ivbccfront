@@ -11,7 +11,8 @@ const links = [
   { name: 'CEFI', path: '/formacion/cefi' },
   { name: 'IBPS', path: '/formacion/ibps' },
   { name: 'Inscripciones', path: '/formacion/inscripciones' },
-  { name: 'Iglesias', path: '/iglesias' },
+  { name: 'Iglesias CC Colombia', path: '/ccencolombia' },
+  { name: 'Iglesias CC Valledupar', path: '/ccenvpar' },
   { name: 'Noticias', path: '/noticias' },
   { name: 'Eventos', path: '/eventos' },
   { name: 'Publicaciones', path: '/publicaciones' },
@@ -29,8 +30,8 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleSubMenu = () => {
-    setIsSubMenuOpen(!isSubMenuOpen);
+  const toggleSubMenu = (menuName) => {
+    setIsSubMenuOpen(prev => prev === menuName ? '' : menuName);
   };
 
   const closeMenu = () => {
@@ -67,10 +68,10 @@ const Header = () => {
           <li><Link to="/" onClick={closeMenu}>Inicio</Link></li>
           <li><Link to="/nosotros" onClick={closeMenu}>Nosotros</Link></li>
           <li className="dropdown">
-            <Link onClick={toggleSubMenu}>
+            <Link onClick={() => toggleSubMenu('formacion')}>
               Formación <span className="static-arrow">&#9662;</span>
             </Link>
-            {isSubMenuOpen && (
+            {isSubMenuOpen === 'formacion' && (
               <ul className="submenu">
                 <li><Link to="/formacion/cefi" onClick={closeMenu}>CEFI</Link></li>
                 <li><Link to="/formacion/ibps" onClick={closeMenu}>IBPS</Link></li>
@@ -78,7 +79,17 @@ const Header = () => {
               </ul>
             )}
           </li>
-          <li><Link to="/iglesias" onClick={closeMenu}>Iglesias</Link></li>
+          <li className="dropdown">
+            <Link onClick={() => toggleSubMenu('iglesias')}>
+            Iglesias <span className="static-arrow">&#9662;</span>
+            </Link>
+            {isSubMenuOpen === 'iglesias' && (
+              <ul className="submenu">
+                <li><Link to="/ccencolombia" onClick={closeMenu}>Iglesias CC Colombia</Link></li>
+                <li><Link to="/ccenvpar" onClick={closeMenu}>Iglesias CC Valledupar</Link></li>
+              </ul>
+            )}
+          </li>
           <li><Link to="/noticias" onClick={closeMenu}>Noticias</Link></li>
           <li><Link to="/eventos" onClick={closeMenu}>Eventos</Link></li>
           <li><Link to="/publicaciones" onClick={closeMenu}>Publicaciones</Link></li>

@@ -87,7 +87,6 @@ const Contacto = () => {
               placeholder="¿A qué iglesia perteneces?"
               value={formData.iglesia}
               onChange={handleChange}
-              required
             />
 
             <label>Mensaje:</label>
