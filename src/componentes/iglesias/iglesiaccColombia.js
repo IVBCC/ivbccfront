@@ -1,64 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import "../leaflet/leafletIconFix";
+import 'leaflet/dist/leaflet.css';
 import "../styles.css";
-import regionCentro from "../../image/region central (2).png";
-import regionAtlantico from "../../image/region atlantico.png";
-import regionAndinaSur from "../../image/region andina sur.png";
-import regionLlanos from "../../image/region llanos.png";
-import regionNoroccidente from "../../image/region noroccidente.png";
-import regionNororiente from "../../image/region nororiente.png";
-import regionOccidente from "../../image/region occidente.png";
-import regionPacifico from "../../image/region pacifico.png";
-const iglesiacccolombia = () => {
-    const regiones = [
-        {
-            nombre: "Región Central",
-            imagen: regionCentro,
-        },
-        {
-            nombre: "Región Atlántico",
-            imagen: regionAtlantico,
-        },
-        {
-            nombre: "Región Andina Sur",
-            imagen: regionAndinaSur,
-        },
-        {
-            nombre: "Región Llanos",
-            imagen: regionLlanos,
-        },
-        {
-            nombre: "Región Noroccidente",
-            imagen: regionNoroccidente,
-        },
-        {
-            nombre: "Región Nororiente",
-            imagen: regionNororiente,
-        },
-        {
-            nombre: "Región Occidente",
-            imagen: regionOccidente,
-        },
-        {
-            nombre: "Región Pacífico",
-            imagen: regionPacifico,
-        },
-    ];
+import InfoRegionModals from './infoRegionModal';
+
+const Iglesiacccolombia = () => {
+    const [modalOpen, setModalOpen] = useState(false);
+    const [iglesiasRegion, setIglesiasRegion] = useState([]);
+    const [regiones, setRegiones] = useState([]);
+
+    useEffect(() => {
+        const fetchRegiones = async () => {
+            try {
+                const res = await fetch("https://ivbccserve.vercel.app/api/iglesias"); // ⚠️ Ajusta al endpoint real
+                const data = await res.json();
+                setRegiones(data);
+            } catch (error) {
+                console.error("Error al cargar las regiones:", error);
+            }
+        };
+        fetchRegiones();
+    }, []);
+
+    const abrirModal = (iglesias) => {
+        setIglesiasRegion(iglesias);
+        setModalOpen(true);        
+    };
 
     return (
         <section className="iglesias-colombia">
             <h1>Iglesias CC en Colombia</h1>
             <p className="subtitulo">Conoce iglesias Cruzada Cristiana en Colombia.</p>
-            {/* Agrega este contenedor para aplicar el grid */}
+
             <div className="region-grid">
                 {regiones.map((region, index) => (
-                    <div className="region-card" key={index}>
-                        <img src={region.imagen} alt={region.nombre} />
+                    <div className="region-card" key={index} onClick={() => abrirModal(region.iglesias)}>
+                        <MapContainer
+                            center={region.iglesias[0]?.coords || [4.5, -74]} // fallback
+                            zoom={6}
+                            style={{ height: "150px", width: "100%" }}
+                            scrollWheelZoom={false}
+                            dragging={false}
+                            doubleClickZoom={false}
+                            zoomControl={false}
+                        >
+                            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                            {region.iglesias.map((iglesia, idx) => (
+                                <Marker key={idx} position={iglesia.coords} />
+                            ))}
+                        </MapContainer>
                         <h2>{region.nombre}</h2>
                     </div>
                 ))}
             </div>
+
+            <InfoRegionModals
+                isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+                iglesias={iglesiasRegion}
+            />
         </section>
     );
 };
 
-export default iglesiacccolombia;
+export default Iglesiacccolombia;
