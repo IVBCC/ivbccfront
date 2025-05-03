@@ -11,6 +11,7 @@ const links = [
   { name: 'CEFI', path: '/formacion/cefi' },
   { name: 'IBPS', path: '/formacion/ibps' },
   { name: 'Inscripciones', path: '/formacion/inscripciones' },
+  { name: 'Iglesias CC Internacionales', path: '/ccinternacionales' },
   { name: 'Iglesias CC Colombia', path: '/ccencolombia' },
   { name: 'Iglesias CC Valledupar', path: '/ccenvpar' },
   { name: 'Noticias', path: '/noticias' },
@@ -85,6 +86,7 @@ const Header = () => {
             </Link>
             {isSubMenuOpen === 'iglesias' && (
               <ul className="submenu">
+                <li><Link to="/ccinternacionales" onClick={closeMenu}>Iglesias CC Internacionales</Link></li>
                 <li><Link to="/ccencolombia" onClick={closeMenu}>Iglesias CC Colombia</Link></li>
                 <li><Link to="/ccenvpar" onClick={closeMenu}>Iglesias CC Valledupar</Link></li>
               </ul>

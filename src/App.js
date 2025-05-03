@@ -18,6 +18,7 @@ import Publicaciones from './componentes/publicaciones/publicaciones';
 import Contactenos from './componentes/contactenos/contacto';
 import IglesiasccColombia from './componentes/iglesias/iglesiaccColombia';
 import IglesiasccVpar from './componentes/iglesias/iglesiasccValledupar';
+import IglesiasccInternacional from './componentes/iglesias/iglesiasInternacionales';
 import './componentes/styles.css';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Route path="/contacto" element={<Contactenos />} />
           <Route path="/ccencolombia" element={<><IglesiasccColombia /> <Partners /></>} />
           <Route path="/ccenvpar" element={<IglesiasccVpar />} />
+          <Route path="/ccinternacionales" element={<IglesiasccInternacional />} />
         </Routes>
         <Footer />
       </div>
