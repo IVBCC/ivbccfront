@@ -27,7 +27,7 @@ const Iglesiasccinternacional = () => {
     useEffect(() => {
         const fetchPdfs = async () => {
             try {
-                const res = await fetch("http://ivbccserve.vercel.app/api/iglesias/pdf/internacional");
+                const res = await fetch("https://ivbccserve.vercel.app/api/iglesias/pdf/internacional");
                 const data = await res.json();
                 setPdfs(data);
             } catch (error) {
