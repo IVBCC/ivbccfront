@@ -1992,7 +1992,9 @@ p {
   align-items: center;
   z-index: 1000;
 }
-
+.h2-iglesia{
+  color: #2c3e50;
+}
 .modal {
   background: white;
   padding: 20px;
@@ -2010,5 +2012,54 @@ p {
   background: transparent;
   border: none;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*modal .pdfs*/
+.modal-content {
+  background: #cfcdcd;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.close-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pdf-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.pdf-list li {
+  margin: 0.5rem 0;
+}
+
+.pdf-list a {
+  color: #34495e;
+  text-decoration: none;
+  font-weight: bold;
+}
+.pdf-list a:hover {
+  color: #2980b9;
+}
+
+.directorio-button {
+  padding: 0.75rem 2rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
   cursor: pointer;
 }

@@ -52,7 +52,7 @@ function App() {
           <Route path="/contacto" element={<Contactenos />} />
           <Route path="/ccencolombia" element={<><IglesiasccColombia /> <Partners /></>} />
           <Route path="/ccenvpar" element={<IglesiasccVpar />} />
-          <Route path="/ccinternacionales" element={<IglesiasccInternacional />} />
+          <Route path="/ccinternacionales" element={<><IglesiasccInternacional /> <Partners /></>} />
         </Routes>
         <Footer />
       </div>

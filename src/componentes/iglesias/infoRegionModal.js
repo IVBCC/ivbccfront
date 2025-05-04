@@ -12,7 +12,7 @@ export default function InfoRegionModals({ isOpen, onClose, iglesias  }) {
         <div className="modal-overlay">
             <div className="modal">
                 <button className="close-btn" onClick={onClose}>✖</button>
-                <h2>Iglesias en la Región</h2>
+                <h2>Iglesias </h2>
                 <MapContainer bounds={bounds} style={{ height: '400px', width: '100%' }}>
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -4,16 +4,18 @@ import "../leaflet/leafletIconFix";
 import 'leaflet/dist/leaflet.css';
 import "../styles.css";
 import InfoRegionModals from './infoRegionModal';
+import DirectorioIglesias from '../iglesias/directorio/directorioIglesias';
 
 const Iglesiasccinternacional = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [iglesiasRegion, setIglesiasRegion] = useState([]);
     const [regiones, setRegiones] = useState([]);
+    const [pdfsInternacional, setPdfs] = useState([]);
 
     useEffect(() => {
         const fetchRegiones = async () => {
             try {
-                const res = await fetch("https://ivbccserve.vercel.app/api/iglesias/internacionales"); // ⚠️ Ajusta al endpoint real
+                const res = await fetch("https://ivbccserve.vercel.app/api/iglesias/internacionales"); // Ajusta al endpoint real
                 const data = await res.json();
                 setRegiones(data);
             } catch (error) {
@@ -22,10 +24,22 @@ const Iglesiasccinternacional = () => {
         };
         fetchRegiones();
     }, []);
+    useEffect(() => {
+        const fetchPdfs = async () => {
+            try {
+                const res = await fetch("http://ivbccserve.vercel.app/api/iglesias/pdf/internacional");
+                const data = await res.json();
+                setPdfs(data);
+            } catch (error) {
+                console.error("Error al cargar los PDFs:", error);
+            }
+        };
+        fetchPdfs();
+    }, []);
 
     const abrirModal = (iglesias) => {
         setIglesiasRegion(iglesias);
-        setModalOpen(true);        
+        setModalOpen(true);
     };
 
     return (
@@ -60,6 +74,13 @@ const Iglesiasccinternacional = () => {
                 onClose={() => setModalOpen(false)}
                 iglesias={iglesiasRegion}
             />
+            <div>
+                <DirectorioIglesias
+                    pdfs={pdfsInternacional}
+                    titulo="Directorio de Iglesias CC Internacionales"
+                    carpeta="internacional"
+                />
+            </div>
         </section>
     );
 };
