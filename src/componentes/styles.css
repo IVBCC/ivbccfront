@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   color: #242424; /* Color del texto */
-  background-color: #f9f9f9; /* Color de fondo general */
+  background-color: #f0ededd2; /* Color de fondo general */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -24,6 +24,63 @@ p {
   line-height: 1.6;
   margin: 0;
 }
+.topbar {
+  background-color: #131242;
+  color: white;
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.topbar .icon {
+  margin-right: 6px;
+}
+
+.topbar a {
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.topbar a:hover {
+  color: #d4af37;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .topbar-left, .topbar-right {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.8rem;
+  }
+
+  .topbar .address {
+    display: none; /* Oculta texto de dirección en móviles */
+  }
+
+  .topbar a {
+    font-size: 1.1rem;
+  }
+}
 
 /* Estilos generales del header */
 .header {
@@ -31,8 +88,8 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #168ccc;
-  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+  border-bottom: 1px solid #bdb7b7;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -51,7 +108,7 @@ p {
   background: none;
   border: none;
   cursor: pointer;
-  color: #f2f2f2;
+  color: #0b0a0a;
 }
 
 .navbar {
@@ -77,7 +134,7 @@ p {
 
 .navbar-ul li a {
   text-decoration: none;
-  color: #fdf6f6;  /* Color de texto predeterminado (gris oscuro) */
+  color: #2a4c6c;  /* Color de texto predeterminado (gris oscuro) */
   transition: color 0.3s ease;
 }
 
@@ -99,7 +156,7 @@ p {
 }
 
 .navbar a:hover {
-  color: #d18239; /* Color naranja en hover */
+  color: #2980b9; /* Color en hover */
 }
 
 /* Estilos para pantallas pequeñas */
@@ -108,7 +165,7 @@ p {
     display: block; /* Muestra el botón hamburguesa */
   }
   .navbar-ul li a {
-    color: #000000;  /* Color de texto predeterminado (gris oscuro) */
+    color: #2a4c6c;  /* Color de texto predeterminado (gris oscuro) */
   }
   .navbar {
     display: none; /* Esconde el menú por defecto */
@@ -144,7 +201,7 @@ p {
   position: absolute;
   left: 0;
   top: 100%;
-  background-color: #fff;
+  background-color: #e2e0e0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px 0;
@@ -157,7 +214,7 @@ p {
 
 .submenu li a {
   white-space: nowrap;
-  color: #000000;
+  color: #2a4c6c;
 }
 
 .submenu li a:hover {
@@ -554,7 +611,7 @@ p {
 }
 
 .partners-section {
-  background-color: #168ccc; /* Azul suave y cremoso */
+  background-color: #131242; /* Azul suave y cremoso */
   padding: 10px 0; /* Espaciado superior e inferior */
   text-align: center;
 }
@@ -1816,7 +1873,7 @@ p {
 
 .search-icon {
   font-size: 22px;
-  color: white;
+  color: rgb(58, 55, 55);
   cursor: pointer;
 }
 
@@ -1836,7 +1893,7 @@ p {
   position: absolute;
   top: 50px;
   right: 10px;
-  background: white;
+  background: rgb(231, 228, 228);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

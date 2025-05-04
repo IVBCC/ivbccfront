@@ -19,6 +19,7 @@ import Contactenos from './componentes/contactenos/contacto';
 import IglesiasccColombia from './componentes/iglesias/iglesiaccColombia';
 import IglesiasccVpar from './componentes/iglesias/iglesiasccValledupar';
 import IglesiasccInternacional from './componentes/iglesias/iglesiasInternacionales';
+import TopHeader from './componentes/topheader';
 import './componentes/styles.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="App">
+        <TopHeader/>
         <Header />
         <Routes>
           <Route path="/" element={

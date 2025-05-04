@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import LogoVBBlanco from '../logo/logoblanco.png';
+import LogoVBNegro from '../logo/logonegro.png';
 import { FaSearch } from 'react-icons/fa';
 import './styles.css';
 
@@ -61,7 +61,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img src={LogoVBBlanco} alt="Iglesia Cruzada Cristiana Valle de Bendicion" />
+        <img src={LogoVBNegro} alt="Iglesia Cruzada Cristiana Valle de Bendicion" />
       </div>
       <button className="menu-toggle" onClick={toggleMenu}>☰</button>
       <nav className={`navbar ${isMenuOpen ? 'navbar-open' : ''}`}>
