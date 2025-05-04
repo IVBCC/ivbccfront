@@ -1,13 +1,16 @@
 import React from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import { FaYoutube, FaFacebookF, FaInstagram } from 'react-icons/fa';
-
+import './styles.css';
 const TopHeader = () => {
   return (
     <div className="topbar">
       <div className="topbar-left">
-        <span><FaPhoneAlt className="icon" /> <span className="text">318 7166545</span></span>
-        <span>
+        <span className="contact">
+          <FaPhoneAlt className="icon" />
+          <span className="text phone">318 7166545</span>
+        </span>
+        <span className="location">
           <FaMapMarkerAlt className="icon" />
           <span className="text address">Cll. 18 #11 - 114 V/par, Cesar</span>
         </span>

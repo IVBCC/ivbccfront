@@ -35,7 +35,7 @@ const CEFI = () => {
           <p className="material-text">
             Tiene los temas necesarios para que la persona que acepta a Jesús como Su Señor y Salvador, empiece a conocer y aplicar en su vida las bases cristianas que lo llevará a tener una vida victoriosa en Cristo. Encontrará enseñanzas como: El nuevo nacimiento, la Biblia, el Bautismo en agua, Dios y Sus valores, entre otros.
           </p>
-          <button className="download-button">Descargar</button>
+          {/* <button className="download-button">Descargar</button> */}
         </div>
 
         {/* Segundo Material */}
@@ -45,7 +45,7 @@ const CEFI = () => {
           <p className="material-text">
             Entrena, desafía y da una guía completa para tener una relación íntima con Dios. Enseñanzas como: La Trinidad, sanidad interior, bautismo, obediencia, rompiendo maldiciones, entre otras, estas, le permitirán llevar una vida de fe y abundancia en Dios.
           </p>
-          <button className="download-button">Descargar</button>
+          {/* <button className="download-button">Descargar</button> */}
         </div>
 
         {/* Tercer Material */}
@@ -55,7 +55,7 @@ const CEFI = () => {
           <p className="material-text">
             Capacita al creyente con las herramientas básicas para que pueda ganar a otros para Cristo. También es la orientación y procedimientos de la estrategia usada por la Iglesia Cruzada Cristiana, denominada “Ruta de Crecimiento” para apertura de grupos y nuevas iglesias.
           </p>
-          <button className="download-button">Descargar</button>
+          {/* <button className="download-button">Descargar</button> */}
         </div>
 
         {/* Cuarto Material */}
@@ -65,7 +65,7 @@ const CEFI = () => {
           <p className="material-text">
             Brinda a cada creyente los principios de liderazgo. A través de enseñanzas como: El líder y su familia, la toalla del servicio, dones y ministerios, consejería, entre otros le permitirá desarrollar el llamado que Dios le haya hecho para la edificación del cuerpo de Cristo.
           </p>
-          <button className="download-button">Descargar</button>
+          {/* <button className="download-button">Descargar</button> */}
         </div>
       </div>
 

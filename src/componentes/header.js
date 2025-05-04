@@ -13,11 +13,11 @@ const links = [
   { name: 'Inscripciones', path: '/formacion/inscripciones' },
   { name: 'Iglesias CC Internacionales', path: '/ccinternacionales' },
   { name: 'Iglesias CC Colombia', path: '/ccencolombia' },
-  { name: 'Iglesias CC Valledupar', path: '/ccenvpar' },
+  { name: 'Iglesias CC Valledupar', path: '' },
   { name: 'Noticias', path: '/noticias' },
   { name: 'Eventos', path: '/eventos' },
   { name: 'Publicaciones', path: '/publicaciones' },
-  { name: 'Descargas', path: '/descargas' },
+  { name: 'Descargas', path: '' },
   { name: 'Contacto', path: '/contacto' }
 ];
 const Header = () => {
@@ -26,6 +26,7 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredLinks, setFilteredLinks] = useState([]); // Estado para almacenar resultados de búsqueda
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -57,13 +58,22 @@ const Header = () => {
       setFilteredLinks(results);
     }
   }, [searchQuery]);
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 0);
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="logo">
         <img src={LogoVBNegro} alt="Iglesia Cruzada Cristiana Valle de Bendicion" />
       </div>
-      <button className="menu-toggle" onClick={toggleMenu}>☰</button>
+      <button className="menu-toggle" onClick={toggleMenu}>{isMenuOpen ? '✖' : '☰'}</button>
       <nav className={`navbar ${isMenuOpen ? 'navbar-open' : ''}`}>
         <ul className="navbar-ul">
           <li><Link to="/" onClick={closeMenu}>Inicio</Link></li>
@@ -88,14 +98,14 @@ const Header = () => {
               <ul className="submenu">
                 <li><Link to="/ccinternacionales" onClick={closeMenu}>Iglesias CC Internacional</Link></li>
                 <li><Link to="/ccencolombia" onClick={closeMenu}>Iglesias CC Colombia</Link></li>
-                <li><Link to="/ccenvpar" onClick={closeMenu}>Iglesias CC Valledupar</Link></li>
+                <li><Link to="" onClick={closeMenu}>Iglesias CC Valledupar</Link></li>
               </ul>
             )}
           </li>
           <li><Link to="/noticias" onClick={closeMenu}>Noticias</Link></li>
-          <li><Link to="/eventos" onClick={closeMenu}>Eventos</Link></li>
+          {/* <li><Link to="/eventos" onClick={closeMenu}>Eventos</Link></li> */}
           <li><Link to="/publicaciones" onClick={closeMenu}>Publicaciones</Link></li>
-          <li><Link to="/descargas" onClick={closeMenu}>Descargas</Link></li>
+          <li><Link to="" onClick={closeMenu}>Descargas</Link></li>
           <li><Link to="/contacto" onClick={closeMenu}>Contacto</Link></li>
         </ul>
       </nav>

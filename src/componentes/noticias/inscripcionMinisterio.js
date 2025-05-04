@@ -50,8 +50,8 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
   return (
     <>
       {isOpen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
+        <div className="modal-overlay-inscripcionministerio">
+          <div className="modal-content-inscripcionministerio">
             <h2>INSCRIPCIÓN A MINISTERIO</h2>
             <form className="modal-form" onSubmit={handleSubmit}>
               <input
