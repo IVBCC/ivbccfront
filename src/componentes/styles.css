@@ -4,26 +4,38 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px; /* Cambia el tamaño de fuente aquí (por defecto era 16px) */
-  line-height: 1.6; /* Ajusta la altura de línea para mantener buena legibilidad */
+  font-size: 14px;
+  /* Cambia el tamaño de fuente aquí (por defecto era 16px) */
+  line-height: 1.6;
+  /* Ajusta la altura de línea para mantener buena legibilidad */
   margin: 0;
   padding: 0;
-  color: #242424; /* Color del texto */
-  background-color: #f0ededd2; /* Color de fondo general */
+  color: #242424;
+  /* Color del texto */
+  background-color: #f0ededd2;
+  /* Color de fondo general */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Poppins', sans-serif;
-  font-weight: 600; /* Texto en negrita */
+  font-weight: 600;
+  /* Texto en negrita */
   margin: 0;
 }
 
 p {
   font-family: 'Poppins', sans-serif;
-  font-weight: 400; /* Texto normal */
+  font-weight: 400;
+  /* Texto normal */
   line-height: 1.6;
   margin: 0;
 }
+
 .topbar {
   background-color: #131242;
   color: white;
@@ -66,7 +78,8 @@ p {
     gap: 0.4rem;
   }
 
-  .topbar-left, .topbar-right {
+  .topbar-left,
+  .topbar-right {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -75,7 +88,8 @@ p {
 
   .topbar .text,
   .topbar .icon {
-    display: none; /* Oculta texto e íconos de teléfono y dirección */
+    display: none;
+    /* Oculta texto e íconos de teléfono y dirección */
   }
 
   .topbar a {
@@ -87,6 +101,7 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease-in-out;
 }
+
 /* Estilos generales del header */
 .header {
   display: flex;
@@ -98,7 +113,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(220, 210, 210, 0.1);  
+  box-shadow: 0 2px 4px rgba(220, 210, 210, 0.1);
 }
 
 .header .logo img {
@@ -138,7 +153,8 @@ p {
 
 .navbar-ul li a {
   text-decoration: none;
-  color: #2a4c6c;  /* Color de texto predeterminado (gris oscuro) */
+  color: #2a4c6c;
+  /* Color de texto predeterminado (gris oscuro) */
   transition: color 0.3s ease;
 }
 
@@ -160,19 +176,25 @@ p {
 }
 
 .navbar a:hover {
-  color: #2980b9; /* Color en hover */
+  color: #2980b9;
+  /* Color en hover */
 }
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block; /* Muestra el botón hamburguesa */
+    display: block;
+    /* Muestra el botón hamburguesa */
   }
+
   .navbar-ul li a {
-    color: #2a4c6c;  /* Color de texto predeterminado (gris oscuro) */
+    color: #2a4c6c;
+    /* Color de texto predeterminado (gris oscuro) */
   }
+
   .navbar {
-    display: none; /* Esconde el menú por defecto */
+    display: none;
+    /* Esconde el menú por defecto */
     position: absolute;
     top: 70px;
     right: 0;
@@ -185,7 +207,8 @@ p {
   }
 
   .navbar-open {
-    display: flex; /* Muestra el menú al abrirlo */
+    display: flex;
+    /* Muestra el menú al abrirlo */
   }
 
   .navbar ul {
@@ -194,58 +217,105 @@ p {
   }
 
   .navbar a {
-    font-size: 18px; /* Ajusta el tamaño de letra */
+    font-size: 18px;
+    /* Ajusta el tamaño de letra */
   }
 }
 
 /* Submenú */
+/* ESTILO BASE */
 .dropdown .submenu {
-  display: flex;
   flex-direction: column;
   position: absolute;
   left: 0;
   top: 100%;
   background-color: #e2e0e0;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   padding: 10px 0;
   z-index: 1000;
+  min-width: 220px;
+  transition: all 0.3s ease;
 }
 
+/* ESTILO DE CADA ITEM DEL SUBMENÚ */
 .submenu li {
-  padding: 5px 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+.submenu li:hover {
+  background-color: #d3d3d3;
 }
 
 .submenu li a {
-  white-space: nowrap;
   color: #2a4c6c;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.3s;
 }
 
 .submenu li a:hover {
-  font-weight: bold;
+  color: #0d3c61;
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-  .navbar {
-    align-items: center;
+/* DESKTOP */
+@media (min-width: 769px) {
+  .dropdown {
+    position: relative;
   }
 
-  .submenu {
+  .dropdown .submenu {
+    display: none;
+  }
+
+  .dropdown:hover .submenu {
+    display: flex;
+  }
+
+  .submenu.show {
+    display: none;
+    /* Para evitar interferencias desde JS en desktop */
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .dropdown .submenu {
     position: relative;
     box-shadow: none;
+    display: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .submenu.show {
+    display: flex;
+    background-color: #e2e0e0;
+    padding: 6px 17px;
+    margin-top: 3px;
+    border-radius: 8px;
+    max-width: 65%; /* Puedes ajustar el % si lo quieres aún más pequeño */
+    margin-left: 15px;
+  }
+
+  .dropdown .submenu li {
+    padding: 2px 2px;
   }
 }
 
 .hero-section {
-  height: 45vh; /* Mantén la altura del componente */
+  height: 45vh;
+  /* Mantén la altura del componente */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #f9f9f9; /* Color de fondo opcional */
+  background-color: #f9f9f9;
+  /* Color de fondo opcional */
   color: #080707;
-  padding: 20px; /* Espaciado interno */
+  padding: 20px;
+  /* Espaciado interno */
 }
 
 .hero-content h1 {
@@ -259,10 +329,14 @@ p {
 }
 
 .hero-logo {
-  margin-top: 20px; /* Espacio entre el texto y el logo */
-  width: 150px; /* Tamaño del logo */
-  height: auto; /* Mantener proporción */
-  display: block; /* Centrar el logo */
+  margin-top: 20px;
+  /* Espacio entre el texto y el logo */
+  width: 150px;
+  /* Tamaño del logo */
+  height: auto;
+  /* Mantener proporción */
+  display: block;
+  /* Centrar el logo */
   margin-left: auto;
   margin-right: auto;
 }
@@ -274,7 +348,8 @@ p {
 
 /* Estilo para el contenedor de la flecha */
 .arrow-container {
-  margin-top: 20px; /* Espaciado entre el texto y la flecha */
+  margin-top: 20px;
+  /* Espaciado entre el texto y la flecha */
   display: flex;
   justify-content: center;
 }
@@ -294,9 +369,11 @@ p {
   0% {
     transform: translateY(0) rotate(-45deg);
   }
+
   50% {
     transform: translateY(10px) rotate(-45deg);
   }
+
   100% {
     transform: translateY(0) rotate(-45deg);
   }
@@ -382,21 +459,30 @@ p {
 .footer-column ul li a:hover {
   color: #fff;
 }
+
 .footer-contact-item {
-  display: flex; /* Coloca el ícono y el texto en una fila */
-  align-items: center; /* Centra verticalmente el contenido */
-  margin-bottom: 10px; /* Espaciado entre los elementos */
+  display: flex;
+  /* Coloca el ícono y el texto en una fila */
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  margin-bottom: 10px;
+  /* Espaciado entre los elementos */
 }
 
 .contact-icon {
-  width: 20px; /* Ajusta el tamaño del ícono */
-  height: 20px; /* Mantén proporciones cuadradas */
-  margin-right: 10px; /* Espacio entre el ícono y el texto */
+  width: 20px;
+  /* Ajusta el tamaño del ícono */
+  height: 20px;
+  /* Mantén proporciones cuadradas */
+  margin-right: 10px;
+  /* Espacio entre el ícono y el texto */
 }
 
 .footer-contact-item p {
-  margin: 0; /* Elimina el margen predeterminado de los párrafos */
-  font-size: 14px; /* Ajusta el tamaño del texto */
+  margin: 0;
+  /* Elimina el margen predeterminado de los párrafos */
+  font-size: 14px;
+  /* Ajusta el tamaño del texto */
 }
 
 /* Redes sociales */
@@ -415,25 +501,34 @@ p {
 .social-links a:hover {
   color: #fff;
 }
+
 .footer-socials {
   display: flex;
-  justify-content: center; /* Centra los íconos horizontalmente */
-  gap: 15px; /* Espaciado entre los íconos */
-  margin-top: 10px; /* Espaciado superior */
+  justify-content: center;
+  /* Centra los íconos horizontalmente */
+  gap: 15px;
+  /* Espaciado entre los íconos */
+  margin-top: 10px;
+  /* Espaciado superior */
 }
 
 .social-icon {
-  width: 30px; /* Ajusta el tamaño de los íconos */
-  height: 30px; /* Mantiene proporción */
-  transition: transform 0.3s ease; /* Animación en hover */
+  width: 30px;
+  /* Ajusta el tamaño de los íconos */
+  height: 30px;
+  /* Mantiene proporción */
+  transition: transform 0.3s ease;
+  /* Animación en hover */
 }
 
 .social-icon:hover {
-  transform: scale(1.1); /* Agranda ligeramente el ícono al pasar el mouse */
+  transform: scale(1.1);
+  /* Agranda ligeramente el ícono al pasar el mouse */
 }
 
 .footer-socials a {
-  text-decoration: none; /* Elimina subrayado de los enlaces */
+  text-decoration: none;
+  /* Elimina subrayado de los enlaces */
 }
 
 /* Aviso de derechos reservados */
@@ -468,13 +563,16 @@ p {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 300px; /* Ancho fijo */
+  width: 300px;
+  /* Ancho fijo */
   text-align: left;
 }
 
 .event-item:hover {
-  transform: scale(1.05); /* Aumenta el tamaño ligeramente */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más marcada al hacer hover */
+  transform: scale(1.05);
+  /* Aumenta el tamaño ligeramente */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  /* Sombra más marcada al hacer hover */
 }
 
 .event-image {
@@ -505,26 +603,34 @@ p {
 }
 
 .carousel-image {
-  width: 100%; /* Mantén el ancho completo */
-  height: auto; /* Ajusta la altura automáticamente */
-  max-height: 400px; /* Limita la altura para pantallas pequeñas */
-  object-fit: cover; /* Mantiene la proporción sin deformación */
-  border-radius: 20px; /* Bordes redondeados */
+  width: 100%;
+  /* Mantén el ancho completo */
+  height: auto;
+  /* Ajusta la altura automáticamente */
+  max-height: 400px;
+  /* Limita la altura para pantallas pequeñas */
+  object-fit: cover;
+  /* Mantiene la proporción sin deformación */
+  border-radius: 20px;
+  /* Bordes redondeados */
 }
 
 .announcements-section {
   padding: 20px;
   margin: 0 auto;
-  max-width: 90%; /* Evita que ocupe todo el ancho en pantallas grandes */
+  max-width: 90%;
+  /* Evita que ocupe todo el ancho en pantallas grandes */
   text-align: center;
   margin-bottom: 50px;
 }
 
 @media (max-width: 768px) {
   .carousel-image {
-    max-height: 250px; /* Reduce la altura en pantallas pequeñas */
+    max-height: 250px;
+    /* Reduce la altura en pantallas pequeñas */
   }
 }
+
 .slick-prev,
 .slick-next {
   width: 40px;
@@ -533,53 +639,68 @@ p {
 }
 
 .slick-prev {
-  left: 10px; /* Ajusta la posición de la flecha izquierda */
+  left: 10px;
+  /* Ajusta la posición de la flecha izquierda */
 }
 
 .slick-next {
-  right: 10px; /* Ajusta la posición de la flecha derecha */
+  right: 10px;
+  /* Ajusta la posición de la flecha derecha */
 }
 
 .slick-prev::before,
 .slick-next::before {
-  display: block; /* Asegura que el área de la flecha siga visible */
+  display: block;
+  /* Asegura que el área de la flecha siga visible */
 }
 
 .slick-dots li button:before {
-  color: #ca5a5a; /* Cambia el color de los puntos de navegación */
+  color: #ca5a5a;
+  /* Cambia el color de los puntos de navegación */
 }
 
 .news-section {
-  padding: 40px 20px; /* Espaciado interno */
+  padding: 40px 20px;
+  /* Espaciado interno */
   text-align: center;
   background-color: #f9f9f9;
   margin-bottom: 50px;
 }
 
 .news-section h3 {
-  font-size: 18px; /* Título más pequeño */
+  font-size: 18px;
+  /* Título más pequeño */
   margin-bottom: 10px;
 }
 
 .news-section h2 {
-  font-size: 22px; /* Subtítulo más pequeño */
+  font-size: 22px;
+  /* Subtítulo más pequeño */
   margin-bottom: 20px;
 }
 
 .news-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas */
-  gap: 20px; /* Espaciado entre las tarjetas */
+  flex-wrap: wrap;
+  /* Permite que las tarjetas se ajusten en varias filas */
+  gap: 20px;
+  /* Espaciado entre las tarjetas */
 }
 
 .news-card {
-  background-color: #fff; /* Fondo blanco para las tarjetas */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  overflow: hidden; /* Oculta contenido desbordado */
-  width: 280px; /* Ancho fijo más pequeño */
-  height: 498px; /* Altura fija */
+  background-color: #fff;
+  /* Fondo blanco para las tarjetas */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  overflow: hidden;
+  /* Oculta contenido desbordado */
+  width: 280px;
+  /* Ancho fijo más pequeño */
+  height: 498px;
+  /* Altura fija */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -587,27 +708,33 @@ p {
 
 .news-card img {
   width: 100%;
-  height: 250px; /* Altura específica para imágenes */
-  object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+  height: 250px;
+  /* Altura específica para imágenes */
+  object-fit: cover;
+  /* Asegura que la imagen se ajuste sin deformarse */
 }
 
 .news-card h4 {
-  font-size: 16px; /* Título más pequeño */
+  font-size: 16px;
+  /* Título más pequeño */
   margin: 10px;
 }
 
 .news-card p {
-  font-size: 14px; /* Texto más pequeño */
+  font-size: 14px;
+  /* Texto más pequeño */
   margin: 0 10px 10px;
 }
 
 .news-card a {
   display: block;
   text-decoration: none;
-  color: #007bff; /* Azul para enlaces */
+  color: #007bff;
+  /* Azul para enlaces */
   font-size: 14px;
   margin: 10px;
-  text-align: right; /* Alinea el enlace a la derecha */
+  text-align: right;
+  /* Alinea el enlace a la derecha */
 }
 
 .news-card a:hover {
@@ -615,40 +742,57 @@ p {
 }
 
 .partners-section {
-  background-color: #131242; /* Azul suave y cremoso */
-  padding: 10px 0; /* Espaciado superior e inferior */
+  background-color: #131242;
+  /* Azul suave y cremoso */
+  padding: 10px 0;
+  /* Espaciado superior e inferior */
   text-align: center;
 }
 
 .partners-container {
   display: flex;
-  justify-content: center; /* Centra horizontalmente los logos */
-  align-items: center; /* Asegura alineación vertical */
-  gap: 20px; /* Espaciado entre los logos */
-  flex-wrap: wrap; /* Permite que los logos se ajusten en múltiples líneas si es necesario */
+  justify-content: center;
+  /* Centra horizontalmente los logos */
+  align-items: center;
+  /* Asegura alineación vertical */
+  gap: 20px;
+  /* Espaciado entre los logos */
+  flex-wrap: wrap;
+  /* Permite que los logos se ajusten en múltiples líneas si es necesario */
 }
 
 .partner-logo {
-  max-width: 100px; /* Controla el ancho máximo de los logos */
-  height: auto; /* Mantiene la proporción de las imágenes */
-  filter: brightness(0) invert(1); /* Hace los logos blancos si son oscuros */
-  transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+  max-width: 100px;
+  /* Controla el ancho máximo de los logos */
+  height: auto;
+  /* Mantiene la proporción de las imágenes */
+  filter: brightness(0) invert(1);
+  /* Hace los logos blancos si son oscuros */
+  transition: transform 0.3s ease;
+  /* Efecto suave al pasar el mouse */
 }
 
 .partner-logo:hover {
-  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+  transform: scale(1.1);
+  /* Aumenta ligeramente el tamaño al pasar el mouse */
 }
 
 .contact-logo {
-  text-align: left; /* Centra el logo en la columna */
-  margin-bottom: 15px; /* Espaciado inferior */
+  text-align: left;
+  /* Centra el logo en la columna */
+  margin-bottom: 15px;
+  /* Espaciado inferior */
 }
 
 .contact-logo img {
-  width: 90px; /* Ajusta el tamaño del logo */
-  height: auto; /* Mantiene la proporción del logo */
-  display: block; /* Asegura que no tenga margen o desplazamiento adicional */
+  width: 90px;
+  /* Ajusta el tamaño del logo */
+  height: auto;
+  /* Mantiene la proporción del logo */
+  display: block;
+  /* Asegura que no tenga margen o desplazamiento adicional */
 }
+
 /* Sección Nosotros */
 .aboutus-section {
   padding: 50px 20px;
@@ -703,7 +847,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px; /* Espaciado uniforme entre secciones */
+  gap: 40px;
+  /* Espaciado uniforme entre secciones */
 }
 
 .mission-vision-section .section {
@@ -714,9 +859,11 @@ p {
 
 /* Títulos */
 .mission-vision-section .section-title {
-  font-size: 2rem; /* Título más grande por defecto */
+  font-size: 2rem;
+  /* Título más grande por defecto */
   color: #444;
-  margin-bottom: 20px; /* Separación entre título y texto */
+  margin-bottom: 20px;
+  /* Separación entre título y texto */
   font-weight: bold;
   text-align: center;
 }
@@ -733,24 +880,28 @@ p {
 /* Responsividad */
 @media (max-width: 768px) {
   .mission-vision-section .section-title {
-    font-size: 1.8rem; /* Reducir tamaño del título */
+    font-size: 1.8rem;
+    /* Reducir tamaño del título */
     margin-bottom: 15px;
   }
 
   .mission-vision-section p {
-    font-size: 1rem; /* Reducir tamaño del texto */
+    font-size: 1rem;
+    /* Reducir tamaño del texto */
     line-height: 1.5;
   }
 }
 
 @media (max-width: 480px) {
   .mission-vision-section .section-title {
-    font-size: 1.6rem; /* Reducir tamaño del título para pantallas más pequeñas */
+    font-size: 1.6rem;
+    /* Reducir tamaño del título para pantallas más pequeñas */
     margin-bottom: 10px;
   }
 
   .mission-vision-section p {
-    font-size: 0.95rem; /* Reducir texto aún más */
+    font-size: 0.95rem;
+    /* Reducir texto aún más */
   }
 }
 
@@ -764,7 +915,8 @@ p {
 
 .biography {
   display: flex;
-  flex-direction: row; /* Imagen y texto lado a lado por defecto */
+  flex-direction: row;
+  /* Imagen y texto lado a lado por defecto */
   align-items: center;
   gap: 20px;
   max-width: 800px;
@@ -773,14 +925,16 @@ p {
 
 .biography img {
   max-width: 300px;
-  width: 100%; /* Hacer que la imagen ocupe todo el ancho de su contenedor */
+  width: 100%;
+  /* Hacer que la imagen ocupe todo el ancho de su contenedor */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .bio-text {
-  flex: 1; /* El texto ocupa el espacio restante */
+  flex: 1;
+  /* El texto ocupa el espacio restante */
 }
 
 .bio-text h3 {
@@ -797,27 +951,35 @@ p {
 
 /* Responsividad */
 @media (max-width: 768px) {
+
   /* Para pantallas medianas y pequeñas, las biografías deben tener la imagen arriba y el texto debajo */
   .biography {
-    flex-direction: column; /* Cambiar a columna: imagen arriba, texto abajo */
-    text-align: center; /* Centrar el texto */
-    gap: 15px; /* Reducir el espacio entre la imagen y el texto */
+    flex-direction: column;
+    /* Cambiar a columna: imagen arriba, texto abajo */
+    text-align: center;
+    /* Centrar el texto */
+    gap: 15px;
+    /* Reducir el espacio entre la imagen y el texto */
   }
 
   .biography img {
-    max-width: 200%; /* Imagen ocupa el 100% del contenedor en pantallas pequeñas */
+    max-width: 200%;
+    /* Imagen ocupa el 100% del contenedor en pantallas pequeñas */
   }
 
   .bio-text {
-    text-align: center; /* Centrar el texto */
+    text-align: center;
+    /* Centrar el texto */
   }
 
   .bio-text h3 {
-    font-size: 1.2rem; /* Reducir tamaño de título */
+    font-size: 1.2rem;
+    /* Reducir tamaño de título */
   }
 
   .bio-text p {
-    font-size: 0.9rem; /* Reducir tamaño de texto */
+    font-size: 0.9rem;
+    /* Reducir tamaño de texto */
     line-height: 1.4;
   }
 }
@@ -825,21 +987,27 @@ p {
 /* Para pantallas aún más pequeñas (480px o menos), ajustar el tamaño de las fuentes */
 @media (max-width: 480px) {
   .bio-text h3 {
-    font-size: 1rem; /* Título más pequeño */
+    font-size: 1rem;
+    /* Título más pequeño */
   }
 
   .bio-text p {
-    font-size: 0.85rem; /* Texto aún más pequeño */
+    font-size: 0.85rem;
+    /* Texto aún más pequeño */
   }
 }
 
 
 /* Línea divisoria */
 .divider-line {
-  height: 2px; /* Grosor de la línea */
-  width: 90%; /* Ancho de la línea (ajustable) */
-  background-color: #ddd; /* Color de la línea */
-  margin: 40px auto; /* Margen para separación vertical */
+  height: 2px;
+  /* Grosor de la línea */
+  width: 90%;
+  /* Ancho de la línea (ajustable) */
+  background-color: #ddd;
+  /* Color de la línea */
+  margin: 40px auto;
+  /* Margen para separación vertical */
 }
 
 /* Sección de Declaración de Fe */
@@ -855,7 +1023,7 @@ p {
   color: #000000;
 }
 
-.faith-h3{
+.faith-h3 {
   font-size: 1.2rem;
   margin-bottom: 40px;
   color: #403434;
@@ -865,32 +1033,44 @@ p {
 
 /* Contenedor principal */
 .faith-container {
-  max-width: 1200px; /* Ancho máximo */
-  margin: 0 auto; /* Centrar el contenedor */
+  max-width: 1200px;
+  /* Ancho máximo */
+  margin: 0 auto;
+  /* Centrar el contenedor */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Espaciado entre filas */
-  padding: 0 40px; /* Espaciado interno en los lados */
+  gap: 20px;
+  /* Espaciado entre filas */
+  padding: 0 40px;
+  /* Espaciado interno en los lados */
 }
 
 /* Elementos individuales */
 .faith-item {
-  flex: 1 1 calc(33.333% - 20px); /* Tres elementos por fila */
+  flex: 1 1 calc(33.333% - 20px);
+  /* Tres elementos por fila */
   text-align: center;
-  opacity: 0; /* Comienza invisible */
-  transform: translateY(20px); /* Desplazamiento inicial */
+  opacity: 0;
+  /* Comienza invisible */
+  transform: translateY(20px);
+  /* Desplazamiento inicial */
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 .faith-item.visible {
-  opacity: 1; /* Elemento visible */
-  transform: translateY(0); /* Vuelve a su posición original */
+  opacity: 1;
+  /* Elemento visible */
+  transform: translateY(0);
+  /* Vuelve a su posición original */
 }
+
 .faith-number {
   font-size: 1.8rem;
   font-weight: bolder;
   color: #000000;
-  margin-bottom: 15px; /* Espacio entre el número y el texto */
+  margin-bottom: 15px;
+  /* Espacio entre el número y el texto */
 }
 
 .faith-text {
@@ -902,7 +1082,8 @@ p {
 /* Responsividad */
 @media (max-width: 768px) {
   .faith-item {
-    flex: 1 1 calc(50% - 20px); /* Dos elementos por fila */
+    flex: 1 1 calc(50% - 20px);
+    /* Dos elementos por fila */
   }
 
   .faith-number {
@@ -916,7 +1097,8 @@ p {
 
 @media (max-width: 480px) {
   .faith-item {
-    flex: 1 1 100%; /* Un elemento por fila */
+    flex: 1 1 100%;
+    /* Un elemento por fila */
   }
 
   .faith-number {
@@ -969,12 +1151,18 @@ p {
 
 /* Contenedor para dos imágenes centradas */
 .ibps-images-container {
-  display: flex; /* Flexbox para alineación */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  gap: 40px; /* Espaciado entre las imágenes */
-  margin: 0 auto; /* Centra horizontalmente en el contenedor */
-  height: 70vh; /* Ocupa toda la altura del viewport */
+  display: flex;
+  /* Flexbox para alineación */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+  gap: 40px;
+  /* Espaciado entre las imágenes */
+  margin: 0 auto;
+  /* Centra horizontalmente en el contenedor */
+  height: 70vh;
+  /* Ocupa toda la altura del viewport */
 }
 
 /* Estilo individual de las imágenes */
@@ -1019,6 +1207,7 @@ p {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .ibps-contact-button a {
   text-decoration: none;
   color: #000000;
@@ -1042,6 +1231,7 @@ p {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .ibps-cefi-button a {
   text-decoration: none;
   color: #000000;
@@ -1050,6 +1240,7 @@ p {
 .ibps-cefi-button:hover {
   background-color: #5fafd4;
 }
+
 /* Correo y teléfono */
 .ibps-contact-info {
   text-align: center;
@@ -1098,7 +1289,7 @@ p {
   color: #0d0d0d;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .programa-estudio-text {
     font-size: 1rem;
     padding: 0 10px;
@@ -1117,7 +1308,8 @@ p {
 .ibps-three-images-section .ibps-image {
   width: 100%;
   height: auto;
-  max-width: 300px; /* Ajusta el tamaño máximo de cada imagen */
+  max-width: 300px;
+  /* Ajusta el tamaño máximo de cada imagen */
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -1134,7 +1326,8 @@ p {
 .ibps-two-images-section .ibps-image {
   width: 100%;
   height: auto;
-  max-width: 300px; /* Ajusta el tamaño máximo de cada imagen */
+  max-width: 300px;
+  /* Ajusta el tamaño máximo de cada imagen */
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -1151,17 +1344,20 @@ p {
 .ibps-four-images-section .ibps-image {
   width: 100%;
   height: auto;
-  max-width: 250px; /* Ajusta el tamaño máximo de cada imagen */
+  max-width: 250px;
+  /* Ajusta el tamaño máximo de cada imagen */
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
+
   .ibps-three-images-section .ibps-images-container,
   .ibps-two-images-section .ibps-images-container,
   .ibps-four-images-section .ibps-images-container {
-    grid-template-columns: repeat(2, 1fr); /* Para pantallas pequeñas, las imágenes se organizan en 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
+    /* Para pantallas pequeñas, las imágenes se organizan en 2 columnas */
   }
 
   .ibps-three-images-section .ibps-image,
@@ -1192,9 +1388,10 @@ p {
 }
 
 /* Datos de Contacto */
-.strong-siguenos{
+.strong-siguenos {
   margin-top: 60px;
 }
+
 .datos-contacto {
   padding-right: 20px;
   margin-top: 80px;
@@ -1254,7 +1451,8 @@ p {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  text-align: left; /* Centramos el texto dentro del input */
+  text-align: left;
+  /* Centramos el texto dentro del input */
 }
 
 .form-group input:focus,
@@ -1265,20 +1463,23 @@ p {
 }
 
 .inscripciones-button {
-  padding: 5px 15px; /* Botón pequeño */
+  padding: 5px 15px;
+  /* Botón pequeño */
   font-size: 1rem;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  align-self: center; /* Centramos el botón dentro del form */
+  align-self: center;
+  /* Centramos el botón dentro del form */
   transition: background-color 0.3s ease;
 }
 
 .inscripciones-button:hover {
   background-color: #064a92;
 }
+
 /* NUEVO: Estilos para el select */
 .form-group select {
   padding: 10px;
@@ -1287,7 +1488,8 @@ p {
   border-radius: 5px;
   text-align: left;
   background-color: #fff;
-  appearance: none; /* Elimina la apariencia nativa del navegador */
+  appearance: none;
+  /* Elimina la apariencia nativa del navegador */
 }
 
 .form-group select:focus {
@@ -1300,16 +1502,20 @@ p {
 .sexo-edad {
   display: flex;
   justify-content: space-between;
-  gap: 10px; /* Espaciado entre los campos */
+  gap: 10px;
+  /* Espaciado entre los campos */
 }
 
-.sexo-container, .edad-container {
+.sexo-container,
+.edad-container {
   display: flex;
   flex-direction: column;
-  flex: 1; /* Ambos ocupan el mismo espacio */
+  flex: 1;
+  /* Ambos ocupan el mismo espacio */
 }
 
-.sexo-container select, .edad-container input {
+.sexo-container select,
+.edad-container input {
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -1317,7 +1523,8 @@ p {
   background-color: #fff;
 }
 
-.sexo-container select:focus, .edad-container input:focus {
+.sexo-container select:focus,
+.edad-container input:focus {
   border-color: #007bff;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -1340,8 +1547,10 @@ p {
 
 /* Grid para organizar los materiales */
 .material-grid {
-  max-width: 800px; /* Reducimos el ancho del grid */
-  margin: 0 auto; /* Centramos el grid */
+  max-width: 800px;
+  /* Reducimos el ancho del grid */
+  margin: 0 auto;
+  /* Centramos el grid */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
@@ -1397,7 +1606,8 @@ p {
 /* Responsive Design */
 @media (max-width: 768px) {
   .material-grid {
-    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    grid-template-columns: 1fr;
+    /* Una columna en pantallas pequeñas */
   }
 }
 
@@ -1408,13 +1618,14 @@ p {
 
 .faq-item h3 {
   font-size: 1.2rem;
-  color: #000000;  
+  color: #000000;
   margin-top: 20px;
 }
 
 .faq-item h3:hover {
   color: #0056b3;
 }
+
 .faq-item p {
   font-size: 1rem;
   color: #333;
@@ -1613,10 +1824,13 @@ p {
 .publicaciones-banner {
   position: relative;
   width: 100%;
-  max-width: 1200px; /* Limitar ancho máximo */
-  margin: 0 auto; /* Centrar el contenedor */
+  max-width: 1200px;
+  /* Limitar ancho máximo */
+  margin: 0 auto;
+  /* Centrar el contenedor */
   overflow: hidden;
-  border-radius: 8px; /* Borde redondeado opcional */
+  border-radius: 8px;
+  /* Borde redondeado opcional */
   margin-bottom: 40px;
 }
 
@@ -1715,11 +1929,12 @@ p {
   margin-bottom: 10px;
 }
 
-.video-card p{
+.video-card p {
   margin-bottom: 20px;
 }
+
 .video-card {
-  text-align: center;  
+  text-align: center;
 }
 
 /* Responsividad */
@@ -1733,6 +1948,7 @@ p {
   .banner-title {
     font-size: 1.5rem;
   }
+
   .video-frame {
     height: 200px;
   }
@@ -1740,7 +1956,8 @@ p {
 
 /* Botón de Meet */
 .meet-button {
-  background-color: #4285f4; /* Azul Google */
+  background-color: #4285f4;
+  /* Azul Google */
   color: white;
   border: none;
   padding: 12px 20px;
@@ -1752,7 +1969,8 @@ p {
 }
 
 .meet-button:hover {
-  background-color: #3367d6; /* Azul más oscuro */
+  background-color: #3367d6;
+  /* Azul más oscuro */
 }
 
 .scroll-to-top {
@@ -1777,7 +1995,8 @@ p {
 }
 
 .map-logo {
-  width: 20px;  /* Ajusta el tamaño del logo */
+  width: 20px;
+  /* Ajusta el tamaño del logo */
   height: auto;
   margin-top: 5px;
   cursor: pointer;
@@ -1837,7 +2056,8 @@ p {
   border: 0;
   border-radius: 10px;
   cursor: pointer;
-  width: 50%; /* Ajusta el ancho si es necesario */
+  width: 50%;
+  /* Ajusta el ancho si es necesario */
   text-align: center;
 }
 
@@ -1871,7 +2091,8 @@ p {
   .contacto-contenido {
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Reduce el espacio en móviles */
+    gap: 20px;
+    /* Reduce el espacio en móviles */
   }
 }
 
@@ -1889,7 +2110,8 @@ p {
 .search-container {
   display: flex;
   align-items: center;
-  margin-left: 0px; /* Reduce el margen o ponlo en 0 si sigue muy separada */
+  margin-left: 0px;
+  /* Reduce el margen o ponlo en 0 si sigue muy separada */
 }
 
 /* Contenedor de la barra de búsqueda */
@@ -1933,6 +2155,7 @@ p {
   max-height: 150px;
   overflow-y: auto;
 }
+
 .search-results li {
   padding: 8px;
   cursor: pointer;
@@ -1944,13 +2167,16 @@ p {
 }
 
 .iglesias-colombia h1 {
-  font-size: 2.8rem; /* o ajusta según tu diseño */
-  margin-top: 5rem;  /* gran espacio arriba */
+  font-size: 2.8rem;
+  /* o ajusta según tu diseño */
+  margin-top: 5rem;
+  /* gran espacio arriba */
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 700;
   color: #111;
 }
+
 .subtitulo {
   text-align: center;
   font-size: 1.4rem;
@@ -1963,13 +2189,16 @@ p {
 .region-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centra las tarjetas */
-  gap: 2.5rem; /* Más espacio entre tarjetas */
+  justify-content: center;
+  /* Centra las tarjetas */
+  gap: 2.5rem;
+  /* Más espacio entre tarjetas */
   margin-top: 2rem;
 }
 
 .region-card {
-  flex: 0 1 250px; /* Tamaño fijo más pequeño */
+  flex: 0 1 250px;
+  /* Tamaño fijo más pequeño */
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -2004,22 +2233,26 @@ p {
 /* Responsive para tabletas */
 @media (max-width: 1024px) {
   .region-card {
-    flex: 0 1 45%; /* 2 por fila en tabletas */
+    flex: 0 1 45%;
+    /* 2 por fila en tabletas */
   }
 }
 
 /* Responsive para móviles */
 @media (max-width: 600px) {
   .region-card {
-    flex: 0 1 100%; /* 1 por fila en móviles */
+    flex: 0 1 100%;
+    /* 1 por fila en móviles */
   }
 }
 
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(100px); /* Puedes cambiar a -100px para deslizar desde la izquierda */
+    transform: translateX(100px);
+    /* Puedes cambiar a -100px para deslizar desde la izquierda */
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -2028,18 +2261,42 @@ p {
 
 .region-card {
   animation: slideIn 0.8s ease-out forwards;
-  opacity: 0; /* Para iniciar invisible */
+  opacity: 0;
+  /* Para iniciar invisible */
 }
 
 /* Para que aparezcan de a poco si quieres un efecto escalonado */
-.region-card:nth-child(1) { animation-delay: 0.1s; }
-.region-card:nth-child(2) { animation-delay: 0.2s; }
-.region-card:nth-child(3) { animation-delay: 0.3s; }
-.region-card:nth-child(4) { animation-delay: 0.4s; }
-.region-card:nth-child(5) { animation-delay: 0.5s; }
-.region-card:nth-child(6) { animation-delay: 0.6s; }
-.region-card:nth-child(7) { animation-delay: 0.7s; }
-.region-card:nth-child(8) { animation-delay: 0.8s; }
+.region-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.region-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.region-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.region-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.region-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.region-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.region-card:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.region-card:nth-child(8) {
+  animation-delay: 0.8s;
+}
 
 .modal-overlay {
   position: fixed;
@@ -2053,16 +2310,18 @@ p {
   align-items: center;
   z-index: 1000;
 }
-.h2-iglesia{
+
+.h2-iglesia {
   color: #2c3e50;
 }
+
 .modal {
   background: white;
   padding: 20px;
   border-radius: 12px;
   width: 90%;
   max-width: 700px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
@@ -2075,9 +2334,11 @@ p {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.close-btn:hover{
+
+.close-btn:hover {
   color: red;
 }
+
 /*modal .pdfs*/
 .modal-content {
   position: relative;
@@ -2086,7 +2347,7 @@ p {
   border-radius: 12px;
   width: 90%;
   max-width: 500px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
@@ -2114,6 +2375,7 @@ p {
   text-decoration: none;
   font-weight: bold;
 }
+
 .pdf-list a:hover {
   color: #2980b9;
 }
