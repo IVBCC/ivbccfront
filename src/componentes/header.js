@@ -120,7 +120,7 @@ const Header = () => {
 
           <li><Link to="/noticias" onClick={closeMenu}>Noticias</Link></li>
           <li><Link to="/publicaciones" onClick={closeMenu}>Publicaciones</Link></li>
-          <li><Link to="" onClick={closeMenu}>Descargas</Link></li>
+          {/* <li><Link to="" onClick={closeMenu}>Descargas</Link></li> */}
           <li><Link to="/contacto" onClick={closeMenu}>Contacto</Link></li>
         </ul>
       </nav>
