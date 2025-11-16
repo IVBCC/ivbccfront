@@ -2389,3 +2389,55 @@ p {
   font-size: 1.1rem;
   cursor: pointer;
 }
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  background-color: #25d366;   /* Verde característico de WhatsApp */
+  color: white;
+  border-radius: 60%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e;    /* Hover más oscuro */
+  transform: scale(1.1);
+}
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 1024px) {
+  .btn-whatsapp {
+    right: 40px;  /* lo acercamos un poco */
+    width: 55px;
+    height: 55px;
+    bottom: 75px;
+  }
+}
+
+/* Móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .btn-whatsapp {
+    right: 20px;  /* pegado al borde */
+    bottom: 75px; /* un poco más arriba */
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Teléfonos muy pequeños */
+@media (max-width: 480px) {
+  .btn-whatsapp {
+    right: 15px;
+    bottom: 75px;
+    width: 45px;
+    height: 45px;
+  }
+}

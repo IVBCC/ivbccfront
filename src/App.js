@@ -20,6 +20,7 @@ import IglesiasccColombia from './componentes/iglesias/iglesiaccColombia';
 import IglesiasccVpar from './componentes/iglesias/iglesiasccValledupar';
 import IglesiasccInternacional from './componentes/iglesias/iglesiasInternacionales';
 import TopHeader from './componentes/topheader';
+import WhatsappContacto from './componentes/whatsapp/whatsapp';
 import './componentes/styles.css';
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="App">
-        <TopHeader/>
+        <TopHeader />
         <Header />
         <Routes>
           <Route path="/" element={
@@ -37,6 +38,7 @@ function App() {
               <Events />
               <News />
               <Partners />
+              <WhatsappContacto />
             </>
           } />
           <Route path="/nosotros" element={
