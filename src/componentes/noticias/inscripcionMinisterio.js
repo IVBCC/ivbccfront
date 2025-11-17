@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Notificacion from "../notificacion/ventanaMensaje";
 import "../styles.css";
 
 const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
@@ -9,6 +10,20 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
     celular: '',
     ministerio: '',
   });
+
+  const [notif, setNotif] = useState({
+    isOpen: false,
+    message: "",
+    type: "success",
+  });
+
+  const showNotification = (message, type = "success") => {
+    setNotif({ isOpen: true, message, type });
+
+    setTimeout(() => {
+      setNotif({ isOpen: false, message: "", type: "success" });
+    }, 2500);
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -32,7 +47,7 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
         if (status >= 400) {
           throw new Error(body.error || "Error desconocido");
         }
-        alert("Inscripción exitosa");
+        showNotification("¡Inscripción exitosa!", "success");
         setFormData({
           cedula: '',
           nombreCompleto: '',
@@ -42,8 +57,8 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
         });
         onClose(); // Cerrar modal
       })
-      .catch((error) => {
-        console.error("Error al enviar la inscripción:", error);
+      .catch((err) => {
+        showNotification(err.message, "error");
       });
   };
 
@@ -110,6 +125,12 @@ const FormularioInscripcionMinisterio = ({ isOpen, onClose }) => {
           </div>
         </div>
       )}
+      <Notificacion
+        isOpen={notif.isOpen}
+        message={notif.message}
+        type={notif.type}
+        onClose={() => setNotif({ isOpen: false, message: "", type: "success" })}
+      />
     </>
   );
 };

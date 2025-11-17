@@ -2441,3 +2441,58 @@ p {
     height: 45px;
   }
 }
+
+/*VENTANA MENSAJE*/
+/* Fondo oscuro */
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Caja del mensaje */
+.notification-modal {
+  background: white;
+  padding: 18px 28px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+  min-width: 260px;
+  font-weight: 600;
+  animation: popupScale 0.25s ease-out;
+}
+
+/* Tipos de mensaje */
+.notification-modal.success {
+  color: #0d7a2c;
+  border-left: 6px solid #0d7a2c;
+}
+
+.notification-modal.error {
+  color: #b30000;
+  border-left: 6px solid #b30000;
+}
+
+.notification-modal.info {
+  color: #004a9f;
+  border-left: 6px solid #004a9f;
+}
+
+@keyframes popupScale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
