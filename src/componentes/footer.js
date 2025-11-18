@@ -43,6 +43,35 @@ const Footer = () => {
           </div>
         </div>
 
+        <div>
+          <div className="footer-contact-item-enlaces">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+              <li>
+                <a href='/'>Inicio</a>                
+              </li>
+              <li>
+                <a href='/nosotros'>Nosotros</a>
+              </li>
+              <li>
+                <a href='/formacion/cefi'>CEFI</a>
+              </li>
+              <li>
+                <a href='/formacion/ibps'>IBPS</a>
+              </li>
+              <li>
+                <a href='/formacion/inscripciones'>Inscripciones</a>
+              </li>
+              <li>
+                <a href='/noticias'>Noticias</a>
+              </li>
+              <li>
+                <a href='/contacto'>Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
 
         {/* Sección de redes sociales */}
         <div className="footer-column">
